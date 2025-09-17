@@ -10,38 +10,115 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <title>Todo sobre Papá Noel</title>
+    <title>Mochileros Sin Fronteras</title>
 </head>
 <body>
 <section id="Inicio">
-    <div class="top-right">
-        <img src="lights.png" alt="lights" />
-    </div>
     <nav id="Navegacion">
+        <a>Mochileros Sin Fronteras</a>
         <a href="home.html#Inicio">Inicio</a>
-        <a href="home.html#PapaNoel">Papá Noel</a>
-        <!--<a href="home.html#LasCartas">¡Las Cartas!</a>-->
-        <a href="home.html#EnviaTuCarta">Envía tu Carta</a>
-        <a href="home.html#Juega">Juega</a>
-
-        <div class="menu-buttons" onclick="openSignInForm()" id="signIn">Sign In</div>
-        <div class="menu-buttons" onclick="openRegisterForm()" id="registrar">Registrar</div>
+        <a href="home.html#PapaNoel">Experiencias</a>
+        <a href="home.html#EnviaTuCarta">Consejos</a>
+        <a href="home.html#Juega">Foro</a>
+        <a href="home.html#LasCartas">Contacto</a>
+        <div class="top-right">
+            <img style= "width:auto; height: 4vw;" src="logo.png" alt="logo" />
+        </div>
+        <label for="lang" ></label>
+        <select class="menu-buttons" name="lang" id="lang">
+            <option value="ES">ES</option>
+            <option value="ENG">ENG</option>
+            <option value="UA">UA</option>
+            <option value="FR">FR</option>
+        </select>
+        <!--<div class="menu-buttons" onclick="openSignInForm()" id="signIn">Sign In</div>
+        <div class="menu-buttons" onclick="openRegisterForm()" id="registrar">Registrar</div>-->
     </nav>
-    <div class="popup-form" id="popupIniciar">
-        <form class="form-container" id="LoginForm">
-            <div class="login-header">Login</div>
-
-            <label for="emailLogin">Email</label>
-            <input type="text" id="emailLogin" placeholder="Escribe Email" name="email" required>
-
-            <label for="passwordLogin">Contraseña</label>
-            <input type="password" id="passwordLogin" placeholder="Escribe una contraseña" name="password" required>
-
-            <div class="button-container">
-                <button type="submit" class="button-enter">Entrar</button>
-                <button type="button" class="button-cancel" onclick="closeSignInForm()">Cancelar</button>
+    <div class="wrapper-main">
+        <div class="first_container">
+            <div class="container-text">
+                Comparte y descubre viajes mochilleros de larga distancia
             </div>
-        </form>
+        </div>
+        <div class="second_container">
+            <div class="forma">
+                <form id="NewCardForm">
+                    <div class="forma-left">
+                        <div class="forma-text">Pack Sudeste Asiático</div>
+                    </div>
+                    <div class="forma-right">
+                        <div class="forma-text">€600</div>
+
+                    </div>
+                    <div class="forma-middle">
+                        <div class="forma-text">Japon y Vietnam: buses, hostales y gías de visados</div>
+                    </div>
+
+                    <button type="button" class="button-comprar">Comprar</button>
+                </form>
+            </div>
+        </div>
+        <div class="third_container">
+                <form class="form-container" id="LoginForm">
+                    <label for="emailLogin"></label>
+                    <input type="text" id="emailLogin" placeholder="Usuario" name="email" required>
+
+                    <label for="passwordLogin"></label>
+                    <input type="password" id="passwordLogin" placeholder="Contraseña" name="password" required>
+                    <div class="consent-box">
+                        <input type="checkbox" id="consent" name="consent" value="Consented">
+                        <label for="consent">Recordar credenciales</label><br>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="button-enter">Iniciar sesión</button>
+                        <button type="button" class="button-cancel">Registrar</button>
+                    </div>
+                </form>
+
+        </div>
+        <div class="fourth-container">
+            <div class="cartas-grind">
+                <div class="carta" id="carta1">
+                    <div class="carta-header">Madrid</div>
+                    <img class="carta-photo" src="../images/mr%20kitty.jpg" alt="user photo">
+                    <button class="cartas-delete-button">Ver más</button>
+                    <img class="carta-like" src="heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta2">
+                    <div class="carta-header">Prague</div>
+                    <img class="carta-photo" src="../images/mr%20kitty.jpg" alt="user photo">
+                    <button class="cartas-delete-button">Ver más</button>
+                    <img class="carta-like" src="heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta3">
+                    <div class="carta-header">Munich</div>
+                    <img class="carta-photo" src="../images/mr%20kitty.jpg" alt="user photo">
+                    <button class="cartas-delete-button">Ver más</button>
+                    <img class="carta-like" src="heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta4">
+                    <div class="carta-header">Barcelona</div>
+                    <img class="carta-photo" src="../images/mr%20kitty.jpg" alt="user photo">
+                    <button class="cartas-delete-button">Ver más</button>
+                    <img class="carta-like" src="heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta5">
+                    <div class="carta-header">Seoul</div>
+                    <img class="carta-photo" src="../images/mr%20kitty.jpg" alt="user photo">
+                    <button class="cartas-delete-button">Ver más</button>
+                    <img class="carta-like" src="heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta6">
+                    <div class="carta-header">Milan</div>
+                    <img class="carta-photo" src="../images/mr%20kitty.jpg" alt="user photo">
+                    <button class="cartas-delete-button">Ver más</button>
+                    <img class="carta-like" src="heart.png" alt="like button">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-form" id="popupIniciar">
+
     </div>
     <div class="popup-form-register" id="popupRegistrar">
         <form class="form-container" id="registerForm">
@@ -107,20 +184,6 @@
         </div>
     </div>
 
-
-    <h1 id="InicioTitulo">(¿Cuánto queda?)</h1>
-    <table id="InicioContador">
-        <tr>
-            <td id="dias">215</td>
-            <td id="horas">01</td>
-            <td id="minutos">16</td>
-            <td id="segundos">34</td>
-        </tr>
-
-
-    </table>
-    <button id="InicioBoton">¡VAMOS!</button>
-
     <div class="popup-form-register hidden" id="popupEditProfile">
         <form class="form-container" id="editForm">
             <div class="login-header">Editar Perfil</div>
@@ -157,71 +220,8 @@
     </div>
 </section>
 
-<section id="PapaNoel">
-    <h2 class="headers">(Papa Noel)</h2>
-    <div class="row">
-        <div class="column_img">
-            <div style="position: relative">
-                <img class="papa-image" src="images/papa%20cat.png" alt="papa cat">
-            </div>
-        </div>
-        <div class="column_text">
-            <p class="papa-header">¿Quién es Papá Noel?</p>
-            <div class="line"></div>
-            <div class="textbox">
-                <p> Papá Noel, también conocido como Santa Claus o San Nicolás, es una figura legendaria asociada con la
-                    Navidad. Representa a un hombre mayor con barba blanca, que lleva un traje rojo con bordes de piel
-                    blanca y viaja en un trineo tirado por renos. Según la tradición, en la víspera de Navidad (el 24 de
-                    diciembre), Papá Noel recorre el mundo entregando regalos a los niños que han sido buenos durante el
-                    año, entrando a las casas a través de la chimenea.
-                    El personaje tiene sus raíces en varias figuras históricas y mitológicas, como San Nicolás de Bari,
-                    un obispo del siglo IV conocido por su generosidad hacia los pobres, especialmente los niños. A lo
-                    largo del tiempo, la imagen de Papá Noel se ha transformado, sobre todo en el siglo XIX y XX, cuando
-                    fue popularizada en Estados Unidos y otros países por la literatura, las ilustraciones y, más tarde,
-                    la publicidad.
-
-                    En resumen, Papá Noel es una figura navideña que simboliza la generosidad, la alegría y el espíritu
-                    festivo, y es especialmente querido por los niños debido a su papel en la entrega de regalos durante
-                    la Navidad.
-                </p>
-            </div>
-            <div class="icons-grind">
-                <div class="icon-description">
-                    <a href="home.html#EnviaTuCarta">
-                        <img class="icon" src="images/carta.png" alt="carta icon">
-                    </a>
-                    <p class="icon-desc-text">Envía la carta a Papa Noel!</p>
-                </div>
-                <div class="icon-description">
-                    <img class="icon" src="images/papa%20noel.png" alt="papa noel icon">
-                    <div class="icon-desc-text">Navidad es el 25 de Diciembre</div>
-                </div>
-                <div class="icon-description">
-                    <a href="https://santatracker.google.com/intl/es-419/">
-                        <img class="icon" src="images/mapa.png" alt="mapa icon">
-                    </a>
-                    <p class="icon-desc-text">Sigue el Papa!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="popup-cartas" id="LasCartas">
-    <div class="cartas-container">
-        <h3 class="headers" style="margin: 5px;">(Las Cartas)</h3>
-        <div class="headers-medium hidden" id="LasCartasNoCartas">
-            Aún no has enviado ni una sola carta a Papá Noel :(
-        </div>
-        <div class="cartas-grind" id="UsersSentCards">
-            <!--cards here-->
-        </div>
-        <div class="button-container-cartas" id="ButtonCartas">
-            <button class="cartas-exit-button" onclick="closeLasCartasPopUp()">Close</button>
-        </div>
-    </div>
-</div>
 <section id="EnviaTuCarta">
-    <h4 class="headers">(Envía Tu Carta)</h4>
+    <!--<h4 class="headers">(Envía Tu Carta)</h4>
     <div class="forma">
         <div class="forma-header">Envia tu carta aqui!</div>
         <form id="NewCardForm">
@@ -247,25 +247,9 @@
             </div>
         </form>
     </div>
-
+-->
 </section>
-<section id="Juega">
-    <h5 class="headers">(Juega)</h5>
-    <div id="JuegaInputs">
-        <input id="LanzaNieves" type="radio" name="juegos" checked>
-        <label for="LanzaNieves">Lanza Nieves</label>
-        <input id="CarreraDeTrineos" type="radio" name="juegos">
-        <label for="CarreraDeTrineos">Carrera de Trineos</label>
-        <input id="ReparteRegalos" type="radio" name="juegos">
-        <label for="ReparteRegalos">Reparte Regalos</label>
 
-    </div>
-    <div id="JuegaContenedor">
-        <canvas id="LanzaNievesJuego" class="juega-juegos"></canvas>
-        <img id="CarreraDeTrineosJuego" class="juega-juegos" src="images/CarreraDeTrineos.png" alt="carrera">
-        <img id="ReparteRegalosJuego" class="juega-juegos" src="images/ReparteRegalos.png" alt="regalos">
-    </div>
-</section>
 <footer>
     <a href="https://es.vecteezy.com/fotos-gratis/fondo-de-navidad" class="footerLink">Fondo De Navidad Fotos de Stock
         por Vecteezy</a>

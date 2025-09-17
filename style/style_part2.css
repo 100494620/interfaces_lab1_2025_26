@@ -1,3 +1,7 @@
+.title {
+    margin-left: 2px;
+}
+
 .my-info-children {
     display: flex;
     flex-direction: column;
@@ -24,7 +28,7 @@
     color: #302f2f;
     background: #f1f1f1;
     border-radius: 0.25rem 1rem 0.25rem 1rem;
-    width: 6vw;
+    width: 3vw;
 }
 
 .menu-buttons:hover {
@@ -65,25 +69,6 @@
     display: block;
 }
 
-.cartas-delete-button {
-    background-color: rgba(172, 58, 58, 0.79);
-    border-radius: 7px;
-    border-color: #a14432;
-    cursor: pointer;
-    width: 26%;
-    padding: 6px;
-    font-family: fontHeader, serif;
-    font-size: 1vw;
-    margin-left: 10vw;
-}
-
-.popup-cartas {
-    display: none;
-    position: fixed;
-    align-items: center;
-    top: 2vw;
-    left: 20%;
-}
 
 .cartas-container {
     width: auto;
@@ -110,10 +95,9 @@
 }
 
 .form-container {
-    max-width: 550px;
-    background-color: white;
     height: auto;
-    border-radius: 20px;
+    margin-right: 0.6vw;
+    padding-top: 1vw;
 }
 
 .my-info-container {
@@ -141,7 +125,7 @@
 .form-container .button-container,
 .children-container, .button-container-register, .my-info-container .button-container, .button-container-register{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 0.5vw;
@@ -172,6 +156,7 @@
     font-size: 1.2vw;
 }
 
+
 .form-container .button-enter, .button-cancel, .button-clear,
 .my-info-container .button-enter,
 .children-container .button-remove-child, .button-add-child{
@@ -180,13 +165,13 @@
     border-color: #a14432;
     cursor: pointer;
     margin: 10px;
-    width: 20%;
+    width: auto;
     padding: 10px;
     font-family: fontHeader, serif;
     font-size: 1.2vw;
 }
 
-.form-container .button-enter:hover, .my-info-container .button-enter:hover, .button-remove-child:hover, .button-add-child:hover{
+.button-comprar:hover, .form-container .button-enter:hover, .my-info-container .button-enter:hover, .button-remove-child:hover, .button-add-child:hover{
     background-color: #e6a31f;
     font-style: italic;
 }
@@ -211,13 +196,12 @@
 
 .popup-form label, .popup-form-register label {
     margin-left: 2vh;
+    background-color: #2b2d38;
 }
 
 .top-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9999;
+    margin-left: 1.5vw;
+    margin-top: 1vw;
 }
 
 .top-right img {
