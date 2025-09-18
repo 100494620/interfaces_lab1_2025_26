@@ -97,7 +97,7 @@
 .form-container {
     height: auto;
     margin-right: 0.6vw;
-    padding-top: 1vw;
+    padding-top: 3.5vw;
 }
 
 .my-info-container {
@@ -110,7 +110,7 @@
 .form-container input[type=text], .form-container input[type=password], .form-container input[type=email],
 .form-container select, .form-container input[type=number] {
     width: 95%;
-    margin-bottom: 2vh;
+    margin-bottom: 4vh;
     margin-left: 2vh;
     padding: 15px;
     font-size: 1.2vw;
@@ -128,8 +128,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5vw;
-    margin-bottom: 0.5vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
 .form-container .button-container-register{
@@ -166,9 +166,9 @@
     cursor: pointer;
     margin: 10px;
     width: auto;
-    padding: 10px;
+    padding: 15px;
     font-family: fontHeader, serif;
-    font-size: 1.2vw;
+    font-size: 1.3vw;
 }
 
 .button-comprar:hover, .form-container .button-enter:hover, .my-info-container .button-enter:hover, .button-remove-child:hover, .button-add-child:hover{

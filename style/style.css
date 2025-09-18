@@ -149,9 +149,9 @@ input {
 
 /*papa noel line*/
 .line {
-    border-bottom: 2px solid #a83a3a;
-    padding-top: 15px;
-    width: 65%;
+    border-bottom: 2px solid #2b4485;
+    width: 75%;
+    margin: 1vw 2vw 1vw 3.9vw;
 }
 
 /*icons*/
@@ -247,15 +247,46 @@ html, body {
 
 .carta {
     width: 16vw;
-    height: 12vw;
-    border: 0.2vmin dashed darkred;
-    background: rgba(205, 92, 92, 0.8);
+    height: 9vw;
+    border: 0.2vmin dashed #114063;
+    background: rgba(95, 173, 218, 0.8);
     border-radius: 3vmin;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 1vw;
     grid-template-rows: auto 1fr;
     padding: 1vw;
+}
+
+
+.text-block {
+    width: auto;
+    display: grid;
+
+    padding: 1vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 4fr;
+    box-sizing: border-box;
+}
+
+.text-block dt {
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    font-size: 1.5vw;
+}
+.side-text-header{
+    grid-row: 1/2;
+    text-align: left;
+    font-family: fontHeader, serif;
+    font-size: 2vw;
+}
+
+.side-text-options {
+    grid-row: 2/3;
+    width: auto;
+    font-family: fontText,serif;
+    font-size: 20px;
+    margin-left: 1.5vw;
 }
 
 .carta-header{
@@ -281,20 +312,47 @@ html, body {
     align-self: center;
     padding-left: 0.7vw;
     width: 70%;
+    margin-bottom: 2.3vw;
 }
 
 .cartas-delete-button {
     grid-column: 2;
     grid-row: 2;
     align-self: end;
-    background-color: rgba(172, 58, 58, 0.79);
+    background-color: rgba(39, 88, 124, 0.79);
     border-radius: 7px;
-    border-color: #a14432;
+    border-color: #183d61;
     cursor: pointer;
     width: auto;
     height: 3vw;
     font-family: fontHeader, serif;
     font-size: 1vw;
+}
+
+.next-button{
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 2vw;
+}
+
+.back-button{
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 57%;
 }
 
 .button-comprar {
@@ -309,6 +367,13 @@ html, body {
     border-radius: 4px;
     font-family: fontHeader, serif;
     font-size: 1.7vw;
+}
+
+.side-text-grid {
+    display: grid;
+    width: 25vw;
+    grid-template-columns: 1fr;
+    margin: 2vw 0 2vw 3vw;
 }
 
 /*send your cart*/
@@ -660,7 +725,7 @@ input[type=submit]:hover {
 #Navegacion{
     margin: 0;
     width: 100%;
-    height: 9vh;
+    height: 6vh;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -671,9 +736,9 @@ input[type=submit]:hover {
     text-align: center;
     flex-grow: 1;
     font-family: fontMainPage, serif;
-    font-size: 10vmin;
+    font-size: 7vmin;
     color: #605e5e;
-    margin: 40px 4px;
+    margin: 25px 4px;
     padding: 10px;
     border-radius: 10px;
     display: flex;
