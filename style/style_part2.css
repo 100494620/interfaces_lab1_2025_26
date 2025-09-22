@@ -1,24 +1,5 @@
-.title {
-    margin-left: 2px;
-}
 
-.my-info-children {
-    display: flex;
-    flex-direction: column;
-}
-
-.p-info, .my-info-children {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2vw;
-}
-
-.my-info-info, .my-info-children {
-    margin-left: 1vw;
-}
-
-.menu-buttons {
+.menu-lang {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,20 +10,6 @@
     background: #f1f1f1;
     border-radius: 0.25rem 1rem 0.25rem 1rem;
     width: 3vw;
-}
-
-.menu-buttons:hover {
-    background-color: #f1c275;
-    font-style: italic;
-    box-shadow: 5px 5px #232323;
-}
-
-.login-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 5.2vw;
-    padding: 1vw;
 }
 
 .dropdown {
@@ -61,25 +28,6 @@
     z-index: 1;
 }
 
-.hidden {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
-
-.cartas-container {
-    width: auto;
-    height: auto;
-    margin-left: 1.85vw;
-    margin-right: 1.85vw;
-    margin-top: 7vw;
-    padding-bottom: 30px;
-    background-color: white;
-    border-radius: 20px;
-}
 
 .popup-form, .popup-form-register, .popup-form-edit{
     display: none;
@@ -171,7 +119,7 @@
     font-size: 1.3vw;
 }
 
-.button-comprar:hover, .form-container .button-enter:hover, .my-info-container .button-enter:hover, .button-remove-child:hover, .button-add-child:hover{
+.cartas-ver-mas-button:hover, .button-comprar:hover, .form-container .button-enter:hover, .my-info-container .button-enter:hover, .button-remove-child:hover, .button-add-child:hover{
     background-color: #e6a31f;
     font-style: italic;
 }

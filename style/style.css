@@ -15,6 +15,9 @@
     padding: 1em;
     color: #d9480f;
 }
+.website-name:hover {
+
+}
 .wrapper-main {
     margin-top: 3vh;
     width: 96%;
@@ -30,7 +33,7 @@
     grid-column: 1;
     grid-row: 1;
     height: 12vw;
-    background-image: url('../back1.jpg');
+    background-image: url('../images/back1.jpg');
 }
 
 .second_container {
@@ -100,111 +103,14 @@ input {
     font-family: fontText,serif;
 }
 
-/* for the phone screen */
-.column_text {
-    float: right;
-    padding-right: 60px;
-    margin: 0;
-}
-
-/*header of the pages*/
-.headers {
-    font-weight: 400;
-    font-style: normal;
-    color: #a83a3a;
-    text-align: center;
-    font-family: fontMainPage, serif;
-    font-size: 10vw;
-}
-
-.headers-medium {
-    text-align: center;
-    font-size: 4vw;
-    font-family: fontHeader, serif;
-    padding-bottom: 2vw;
-    margin: 1vw;
-}
-
-/*papa noel two columns*/
-#PapaNoel {
-    width: 100%;
-    height: auto;
-    min-height: 70vh;
-}
-
-.column_text, .column_img {
-    width: 50%;
-    box-sizing: border-box;
-}
-
-.column_img {
-    float: left;
-    padding-left: 100px;
-}
-
-.papa-image {
-    width: 70%;
-    padding-top: 5%;
-}
-
-/*papa noel line*/
 .line {
     border-bottom: 2px solid #2b4485;
     width: 75%;
     margin: 1vw 2vw 1vw 3.9vw;
 }
 
-/*icons*/
-.icons-grind {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    padding-top: 20px;
-}
-
-.icon {
-    width: 2.5rem;
-    height: auto;
-    vertical-align: middle;
-    margin: 0;
-    padding-bottom: 20px;
-}
-
-.icon-description {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.icon-desc-text {
-    padding:0;
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-/*quién es papa noel header*/
-.papa-header {
-    font-size: 2rem;
-    font-family: fontHeader, serif;
-    margin:0;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 * {
-        cursor: url(../images/png-clipart-open-snowman-graphics-pallet-snowman-faces-pinterest-face-hat.png) 12 6, auto;
-}
-
-.carta, .carta * {
-    cursor: move;
-}
-
-.cartas-delete-button {
-    cursor: url(../images/png-clipart-open-snowman-graphics-pallet-snowman-faces-pinterest-face-hat.png) 12 6, auto;
+        cursor: url(../images/plane.png), auto;
 }
 
 html, body {
@@ -214,36 +120,12 @@ html, body {
     height: 100%;
 }
 
-/*carts*/
-#LasCartas {
-    width: 60%;
-    height: auto;
-    overflow: auto;
-    align-items: center;
-}
-
 .cartas-grind {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 3vh;
     margin: 2vw 0vw 2vw 3vw;
 }
-
-/*.carta {
-
-    width: 16vw;
-    height: 12vw;
-    border: 0.2vmin dashed darkred;
-    background: rgba(205, 92, 92, 0.8);
-    border-radius: 3vmin;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 1vw;
-}
-*/
 
 .carta {
     width: 16vw;
@@ -258,11 +140,9 @@ html, body {
     padding: 1vw;
 }
 
-
 .text-block {
     width: auto;
     display: grid;
-
     padding: 1vw;
     grid-template-columns: 1fr;
     grid-template-rows: auto 4fr;
@@ -274,6 +154,7 @@ html, body {
     margin-top: 2vw;
     font-size: 1.5vw;
 }
+
 .side-text-header{
     grid-row: 1/2;
     text-align: left;
@@ -315,7 +196,7 @@ html, body {
     margin-bottom: 2.3vw;
 }
 
-.cartas-delete-button {
+.cartas-ver-mas-button {
     grid-column: 2;
     grid-row: 2;
     align-self: end;
@@ -376,12 +257,6 @@ html, body {
     margin: 2vw 0 2vw 3vw;
 }
 
-/*send your cart*/
-#EnviaTuCarta {
-    width: 100%;
-    height: auto;
-    min-height: 90vh;
-}
 
 /*container for the form*/
 .forma {
@@ -398,7 +273,7 @@ html, body {
     margin-top: 2.4vw;
     margin-left: 3vw;
     justify-content: flex-start;
-    background-image: url('../japan.jpg');"""
+    background-image: url('../images/japan.jpg');"""
 }
 
 /*split of the container into two parts*/
@@ -429,7 +304,6 @@ html, body {
 }
 
 
-/*the biggest field for the sending of a letter*/
 .forma-middle {
     background-color: rgba(255, 255, 255, 0.74);
     width: 100%;
@@ -439,11 +313,6 @@ html, body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-}
-
-/*size on a middle-input field*/
-.forma-middle input[type=text] {
-    padding: 0.5vw;
 }
 
 .forma-header {
@@ -467,35 +336,6 @@ html, body {
     flex-direction: column;
     padding-top: 9.7vw;
     align-items: flex-end;
-}
-
-/*form input functionality*/
-input[type=text] {
-    width: 100%;
-    padding: 0.5vw;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-/*submit button functionality*/
-input[type=submit] {
-    background-color: rgba(205, 92, 92);
-    color: white;
-    padding: 1vw 2vw;
-    border: none;
-    border-radius: 4px;
-    font-family: fontHeader, serif;
-    font-size: 1.7vw;
-}
-
-/*change of the color while clicking on submit button*/
-input[type=submit]:hover {
-    background-color: #e19c38;
-    border: 0.4vmin dashed rgb(194, 71, 71);
 }
 
 /*breakpoint for devices less then 600px*/
@@ -713,6 +553,7 @@ input[type=submit]:hover {
     background-repeat: no-repeat;
     background-size: cover;
     color: #302c23;
+    padding-bottom: 3vw;
 
 }
 @keyframes AnimacionLetras {
@@ -732,7 +573,7 @@ input[type=submit]:hover {
     justify-items: center;
 }
 
-#Navegacion a{
+.website-name, #Navegacion a{
     text-align: center;
     flex-grow: 1;
     font-family: fontMainPage, serif;
@@ -783,98 +624,6 @@ input[type=submit]:hover {
     from{background-color: #c3b18a
     }
     to{background-color: goldenrod}
-}
-#InicioContador {
-    color: #d9ae51;
-    background-color: #24262e;
-    border: 2px solid #4b4d59;
-    margin-top: 1vmin;
-    margin-bottom: 5vmin;
-    font-size: 12vmin;
-    border-spacing: 0;
-    border-radius: 20px;
-    text-align: center;
-}
-#InicioContador tr td{
-    padding: 0.5vh 1vw;
-    text-align: center;
-    border-right: 3px dotted rgb(76, 78, 90);
-    animation-name: AnimacionLetras;
-    animation-duration: 2s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-
-}
-#segundos{
-    border-right: none !important;
-}
-
-#InicioBoton {
-    color: #2b2d38;
-    font-size: 2.5vmin;
-    font-weight: 700;
-    border: 0;
-    border-radius: 12px;
-    padding: 2vmin 6vmin;
-    background-color: #c2b18b;
-}
-#InicioBoton:hover {
-    margin: 0;
-    transform: scale(1.2);
-    background-color: goldenrod;
-    animation-name: AnimacionColor;
-    animation-duration: 0.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-
-/*games*/
-#Juega {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5vh;
-}
-#Juega h5{
-    margin-bottom: 3px;
-}
-#JuegaInputs{
-    font-size: 23px;
-    display: flex;
-    flex-wrap: wrap;
-    height: 15%;
-    width: auto;
-}
-#Juega div input{
-    display: none;
-}
-
-
-#Juega div label{
-    font-family: fontMainPage, serif;
-    text-wrap: wrap;
-    font-size: 10vmin;
-    color: #c2b38d;
-    display: flex;
-    flex: 0 0 33.3%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.juega-juegos{
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-#JuegaContenedor{
-    margin: 5vh;
-    display: flex;
-    width: auto;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 
