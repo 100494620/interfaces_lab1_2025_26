@@ -29,13 +29,6 @@
 }
 
 
-.popup-form, .popup-form-register, .popup-form-edit{
-    display: none;
-    position: fixed;
-    align-items: center;
-    top: 20%;
-}
-
 .popup-form-register {
     top: 13%;
     overflow-y: auto;
@@ -144,7 +137,6 @@
 
 .popup-form label, .popup-form-register label {
     margin-left: 2vh;
-    background-color: #2b2d38;
 }
 
 .top-right {

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/register_style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <title>Mochileros Sin Fronteras</title>
+</head>
+<body>
+<section id="Inicio">
+    <nav id="Navegacion">
+        <div class="website-name">Mochileros Sin Fronteras</div>
+        <a href="#">Inicio</a>
+        <a href="#">Experiencias</a>
+        <a href="#">Consejos</a>
+        <a href="#">Foro</a>
+        <a href="#">Contacto</a>
+        <div class="top-right">
+            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo" />
+        </div>
+        <label for="lang" ></label>
+        <select class="menu-lang" name="lang" id="lang">
+            <option value="ES">ES</option>
+            <option value="ENG">ENG</option>
+            <option value="UA">UA</option>
+            <option value="FR">FR</option>
+        </select>
+    </nav>
+    <div class="forma">
+        <div class="forma-header">Registro de nuevos usuarios</div>
+        <form id="NewCardForm">
+            <div class="forma-left">
+                <label class="forma-text" for="name"></label>
+                <input type="text" id="name" name="name" placeholder="Nombre">
+                <label class="forma-text" for="email"></label>
+                <input type="text" id="email" name="email" placeholder="Correo electronico">
+                <label class="forma-text" for="bday">Fecha de nacimiento</label>
+                <input type="date" id="bday">
+                <label class="forma-text" for="login"></label>
+                <input type="text" id="login" name="login" placeholder="login">
+                <label class="forma-text" for="file">Subir imagen de perfil</label>
+                <input type="file" id="file" name="filename">
+                <button type="button" id="button-submit-image">Examinar ...</button>
+                <div class="consent-box">
+                    <input type="checkbox" id="consent" name="consent" value="Consented">
+                    <label for="consent">Acepto la
+                        <a href="#">Politica de privacidad</a>
+                    </label><br>
+                </div>
+            </div>
+            <div class="forma-right">
+                <label class="forma-text" for="surname"></label>
+                <input type="text" id="surname" name="surname" placeholder="Apellidos">
+                <label class="forma-text" for="confirmEmail"></label>
+                <input type="text" id="confirmEmail" name="confirmEmail" placeholder="Confirmar correo">
+                <label class="forma-text" for="password"></label>
+                <input type="text" id="password" name="password" placeholder="password">
+                <div class="forma-submit">
+                    <input type="submit" value="Guardar datos y acceder">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--<div class="popup-form-register" id="popupRegistrar">
+        <form class="form-container" id="registerForm">
+            <div class="login-header">Registrar</div>
+
+            <label for="usernameR">Nombre de Usuario</label>
+            <input type="text" placeholder="Escribe tu nombre de usuario" id="usernameR" required minlength="3">
+
+            <label for="passwordR">Contraseña</label>
+            <input type="password" placeholder="Escribe tu contraseña" id="passwordR">
+
+            <label for="passwordRR">Repetir Contraseña</label>
+            <input type="password" placeholder="Escribe tu contraseña" id="passwordRR">
+
+            <label for="emailR">Correo electrónico</label>
+            <input type="email" placeholder="Escribe tu email" id="emailR" required placeholder="nombre@dominio.ext"/>
+
+            <label for="cityR">Cuidad</label>
+            <input type="text" placeholder="Escribe tu ciudad" id="cityR" required minlength="3">
+
+            <label for="countryR">País</label>
+            <input type="text" placeholder="Escribe tu pais" id="countryR" required minlength="3">
+
+            <label for="gender">Cuál es tu género:</label>
+
+            <select name="gender" id="gender">
+                <option value="femenino">Femenino</option>
+                <option value="masculino">Masculino</option>
+                <option value="car">Otro/a</option>
+                <option value="nada">Prefiero no decirlo</option>
+            </select>
+
+            <label for="children">¿Cuántos hijos / hijas tienes?</label>
+            <input type="number" placeholder="Escribe el numero de hijos/as que tienes" id="children">
+
+            <div id="childrenInfo"></div>
+
+            <div class="button-container-register">
+                <button type="submit" class="button-enter">Aceptar</button>
+                <button type="button" class="button-cancel" onclick="closeRegisterForm()">Cancelar</button>
+                <button type="button" class="button-clear" onclick="clearRegisterForm()">Limpiar</button>
+            </div>
+        </form>
+    </div>-->
+</section>
+<footer>
+    <a href="https://es.vecteezy.com/fotos-gratis/fondo-de-navidad" class="footerLink">Fondo De Navidad Fotos de Stock
+        por Vecteezy</a>
+    <a href="https://iconos8.es/license" class="footerLink">Iconos por ICONS8</a>
+    <div id="footerImages">
+        <a href="https://www.youtube.com/watch?v=w0HxMhXSgXo">
+            <img src="images/icons8-bebe-yoda-100.png" alt="bebe yoda">
+        </a>
+        <a href="https://www.lego.com/">
+            <img src="images/icons8-lego-128.png" alt="lego">
+        </a>
+        <a href="https://www.instagram.com/starwars/">
+            <img src="images/icons8-instagram-128.png" alt="instagram">
+        </a>
+    </div>
+</footer>
+<script src="script/class.js"></script>
+<script src="script/local_storage_ops.js"></script>
+<script src="script/script.js"></script>
+<script src="script/init.js"></script>
+<script src="script/games.js"></script>
+<script src="script/countdown.js"></script>
+</body>
+</html>

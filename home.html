@@ -72,7 +72,7 @@
                     </div>
                     <div class="button-container">
                         <button type="submit" class="button-enter">Iniciar sesión</button>
-                        <button type="button" class="button-cancel">Registrar</button>
+                        <button type="button" class="button-cancel" onclick="window.location.href='register.html'">Registrar</button>
                     </div>
                 </form>
                 <div class="line"></div>
@@ -149,107 +149,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="popup-form" id="popupIniciar">
-
-    </div>
-    <div class="popup-form-register" id="popupRegistrar">
-        <form class="form-container" id="registerForm">
-            <div class="login-header">Registrar</div>
-
-            <label for="usernameR">Nombre de Usuario</label>
-            <input type="text" placeholder="Escribe tu nombre de usuario" id="usernameR" required minlength="3">
-
-            <label for="passwordR">Contraseña</label>
-            <input type="password" placeholder="Escribe tu contraseña" id="passwordR">
-
-            <label for="passwordRR">Repetir Contraseña</label>
-            <input type="password" placeholder="Escribe tu contraseña" id="passwordRR">
-
-            <label for="emailR">Correo electrónico</label>
-            <input type="email" placeholder="Escribe tu email" id="emailR" required placeholder="nombre@dominio.ext"/>
-
-            <label for="cityR">Cuidad</label>
-            <input type="text" placeholder="Escribe tu ciudad" id="cityR" required minlength="3">
-
-            <label for="countryR">País</label>
-            <input type="text" placeholder="Escribe tu pais" id="countryR" required minlength="3">
-
-            <label for="gender">Cuál es tu género:</label>
-
-            <select name="gender" id="gender">
-                <option value="femenino">Femenino</option>
-                <option value="masculino">Masculino</option>
-                <option value="car">Otro/a</option>
-                <option value="nada">Prefiero no decirlo</option>
-            </select>
-
-            <label for="children">¿Cuántos hijos / hijas tienes?</label>
-            <input type="number" placeholder="Escribe el numero de hijos/as que tienes" id="children">
-
-            <div id="childrenInfo"></div>
-
-            <div class="button-container-register">
-                <button type="submit" class="button-enter">Aceptar</button>
-                <button type="button" class="button-cancel" onclick="closeRegisterForm()">Cancelar</button>
-                <button type="button" class="button-clear" onclick="clearRegisterForm()">Limpiar</button>
-            </div>
-        </form>
-    </div>
-
-    <div class="popup-form-edit hidden" id="popupMyProfile">
-        <div class="my-info-container" id="myProfileForm">
-
-            <div class="login-header">Mi Perfil</div>
-
-            <div class="p-info"><strong>Nombre de usuario: </strong> <span class="my-info-info" id="myProfileUsername"></span></div>
-            <div class="p-info"><strong>Email:</strong> <span class="my-info-info" id="myProfileEmail"></span></div>
-            <div class="p-info"><strong>Ciudad:</strong> <span class="my-info-info" id="myProfileCity"></span></div>
-            <div class="p-info"><strong>Pais:</strong> <span class="my-info-info" id="myProfileCountry"></span></div>
-            <div class="p-info"><strong>Género:</strong> <span class="my-info-info" id="myProfileGender"></span></div>
-            <div class="p-info"><strong>Hijos/as:</strong></div>
-            <ul  class="my-info-children" id="myProfileChildren"></ul>
-
-            <div class="button-container-register">
-                <button type="button" class="button-enter" onclick="openEditForm()">Editar</button>
-                <button type="button" class="button-cancel" onclick="closeProfileForm()">Cerrar</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="popup-form-register hidden" id="popupEditProfile">
-        <form class="form-container" id="editForm">
-            <div class="login-header">Editar Perfil</div>
-
-            <label for="usernameE">Nombre de Usuario</label>
-            <input type="text" placeholder="Escribe el nombre de usuario" id="usernameE" required minlength="3">
-
-            <label for="cityE">Cuidad</label>
-            <input type="text" placeholder="Escribe la ciudad" id="cityE" required minlength="3">
-
-            <label for="countryE">País</label>
-            <input type="text" placeholder="Escribe el pais" id="countryE" required minlength="3">
-
-            <label for="genderE">Cuál es tu género:</label>
-            <select id="genderE">
-                <option value="femenino">Femenino</option>
-                <option value="masculino">Masculino</option>
-                <option value="car">Otro/a</option>
-                <option value="nada">Prefiero no decirlo</option>
-            </select>
-
-            <label for="childrenE">Hijos/as:</label>
-            <div id="childrenE"></div>
-
-            <div class="children-container">
-                <button class="button-add-child" type="button" onclick="addNewChild()">Añadir hijo/a</button>
-            </div>
-
-            <div class="button-container-register">
-                <button type="submit" class="button-enter">Guardar</button>
-                <button type="button" class="button-cancel" onclick="cancelEdit()">Cancelar</button>
-            </div>
-        </form>
     </div>
 </section>
 <footer>

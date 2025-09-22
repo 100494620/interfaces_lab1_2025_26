@@ -1,0 +1,735 @@
+/*fonts*/
+@font-face {
+    font-family: fontHeader;
+    src: url("../fonts/Christmas.otf");
+}
+.wrapper {
+    box-sizing: border-box;
+    max-width: 940px;
+    margin: 0 auto;
+}
+.wrapper > div {
+    border: 2px solid rgb(233 171 88);
+    border-radius: 5px;
+    background-color: rgb(233 171 88 / 50%);
+    padding: 1em;
+    color: #d9480f;
+}
+
+.wrapper-main {
+    margin-top: 3vh;
+    width: 96%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3vw;
+    grid-auto-rows: minmax(10vw, auto);
+}
+
+.first_container {
+    border-radius: 0.8vw;
+    grid-column: 1;
+    grid-row: 1;
+    height: 12vw;
+    background-image: url('../images/back1.jpg');
+}
+
+.second_container {
+    border-radius: 0.8vw;
+    grid-column: 1;
+    height: 30vw;
+    grid-row: 2;
+    background: rgba(90, 81, 81, 0.25);
+}
+
+.third_container {
+    border-radius: 0.8vw;
+    grid-column: 2;
+    grid-row: 1 / 4;
+    background: rgba(90, 81, 81, 0.25);
+}
+
+.fourth-container {
+    border-radius: 0.8vw;
+    grid-column: 1;
+    grid-row: 3;
+    height: auto;
+    background: rgba(90, 81, 81, 0.25);
+}
+
+.container-text {
+    background-color: rgba(55, 51, 51, 0.31);
+    color: white;
+    padding: 1vw 5vw;
+    margin: 4vw 1vw auto 1vw;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 2vw;
+}
+
+.consent-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+@font-face {
+    font-family: fontText;
+    src: url("../fonts/textStyle.otf");
+}
+
+@font-face {
+    font-family: fontMainPage;
+    src: url("../fonts/MainChirstmas.otf");
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: fontText,serif;
+    font-size: 1.3vw;
+}
+
+/*margins for all the built-in headers*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 4vw;
+}
+
+input {
+    font-size: 1.3vw;
+    font-family: fontText,serif;
+}
+
+.line {
+    border-bottom: 2px solid #2b4485;
+    width: 75%;
+    margin: 1vw 2vw 1vw 3.9vw;
+}
+
+* {
+    cursor: url(../images/plane.png), auto;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.cartas-grind {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 3vh;
+    margin: 2vw 0vw 2vw 3vw;
+}
+
+.carta {
+    width: 16vw;
+    height: 9vw;
+    border: 0.2vmin dashed #114063;
+    background: rgba(95, 173, 218, 0.8);
+    border-radius: 3vmin;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1vw;
+    grid-template-rows: auto 1fr;
+    padding: 1vw;
+}
+
+.text-block {
+    width: auto;
+    display: grid;
+    padding: 1vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 4fr;
+    box-sizing: border-box;
+}
+
+.text-block dt {
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    font-size: 1.5vw;
+}
+
+.side-text-header{
+    grid-row: 1/2;
+    text-align: left;
+    font-family: fontHeader, serif;
+    font-size: 2vw;
+}
+
+.side-text-options {
+    grid-row: 2/3;
+    width: auto;
+    font-family: fontText,serif;
+    font-size: 20px;
+    margin-left: 1.5vw;
+}
+
+.carta-header{
+    grid-column: 1/3;
+    grid-row: 1;
+    text-align: left;
+    font-size: 1.25vw;
+    font-family: fontHeader, serif;
+}
+
+.carta-photo {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.carta-like {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    padding-left: 0.7vw;
+    width: 70%;
+    margin-bottom: 2.3vw;
+}
+
+.cartas-ver-mas-button {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    cursor: pointer;
+    width: auto;
+    height: 3vw;
+    font-family: fontHeader, serif;
+    font-size: 1vw;
+}
+
+.next-button{
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 2vw;
+}
+
+.back-button{
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 57%;
+}
+
+.button-comprar {
+    margin-top: 9.7vw;
+    float: right;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(44, 39, 39);
+    color: white;
+    padding: 0.7vw 1.8vw;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 1.7vw;
+}
+
+.side-text-grid {
+    display: grid;
+    width: 25vw;
+    grid-template-columns: 1fr;
+    margin: 2vw 0 2vw 3vw;
+}
+
+/*container for the form*/
+.forma {
+    width: 60%;
+    height: auto;
+    margin-top: 4vw;
+    background: rgba(140, 158, 188, 0.5);
+    border-radius: 3vmin;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2vw;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+/*split of the container into two parts*/
+.forma-left, .forma-right {
+    width: 45%;
+    box-sizing: border-box;
+    padding-bottom: 1vw;
+}
+
+.forma-right {
+    float: right;
+}
+
+.forma-left {
+    float: left;
+}
+
+/*the biggest field for the sending of a letter*/
+.forma-middle {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/*size on a middle-input field*/
+.forma-middle input[type=text] {
+    height: 10vw;
+}
+
+.forma-header {
+    text-align: center;
+    font-size: 2.3vw;
+    font-family: fontHeader, serif;
+    padding-bottom: 3vw;
+}
+
+.forma-text {
+    white-space: pre-line;
+}
+
+/*submit button position*/
+.forma-submit {
+    display: flex;
+    margin-top: 11vw;
+    justify-content: flex-end;
+}
+
+/*form input functionality*/
+input[type=text] {
+    width: 100%;
+    padding: 1vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/*submit button functionality*/
+input[type=submit] {
+    background-color: rgba(39, 88, 124, 0.79);
+    color: white;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 8px;
+    font-family: fontHeader, serif;
+    font-size: 1.4vw;
+}
+
+/*change of the color while clicking on submit button*/
+input[type=submit]:hover {
+    background-color: #e19c38;
+    border: 0.2vmin solid #183d61;
+}
+
+.consent-box {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5vw;
+}
+
+#bday {
+    display: block;
+    margin-bottom: 1.4vw;
+    margin-top: 1vw;
+}
+
+#file {
+    display: none;
+}
+
+#button-submit-image {
+    width: 40%;
+    padding: 0.7vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size: 1.3vw;
+    font-family: fontText,serif;
+}
+#login, #password{
+    width: 60%;
+    align-content: flex-end;
+}
+
+/*add ai usage here*/
+label[for="file"], label[for="bday"] {
+    display: block;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+#password {
+    margin-top: 6.6vw;
+}
+
+#consent, label[for="consent"] {
+    margin-top: 1.4vw;
+}
+/*breakpoint for devices less then 600px*/
+@media (max-width: 600px) {
+
+    #PapaNoel {
+        font-size: 3vw;
+    }
+
+    .line {
+        border-bottom: 1px solid #a83a3a;
+        padding-top: 15px;
+        width: 50%;
+    }
+
+    .papa-image {
+        width: 80%;
+        padding-top: 50%;
+    }
+
+    .icon {
+        width: 1.5rem;
+        height: auto;
+        vertical-align: middle;
+    }
+
+    .icon-description {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .icon-desc-text {
+        padding:0;
+        margin: 0;
+        font-size: 3vw;
+    }
+
+    /*quién es papa noel header*/
+    .papa-header {
+        font-size: 1.8rem;
+    }
+    /*todas las cartas*/
+    #LasCartas {
+        align-content: center;
+        justify-content: center;
+        min-height: 60vh;
+    }
+
+    .cartas-grind {
+        grid-template-columns: 1fr;
+    }
+
+    .carta {
+        width: 100%;
+        height: 16vw;
+        font-size: 3vw;
+    }
+
+    .carta-text {
+        font-size: 1.5vw;
+        width: 20vw;
+    }
+
+    .carta-header, .forma-header, input[type=submit] {
+        font-size: 4vw;
+    }
+
+    .carta-photo {
+        top: 40%;
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .column_img {
+        float: left;
+        padding-left: 40px;
+        width: 30%;
+    }
+
+    #EnviaTuCarta {
+        width: auto;
+        height: auto;
+        min-height: 40vh;
+    }
+
+    .forma {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vw;
+    }
+
+    .forma-header {
+        padding-bottom: 7vw;
+    }
+}
+
+/*breakpoint for the middle-scaled devices*/
+@media (min-width: 600px) and (max-width: 768px) {
+
+    #LasCartas {
+        height: auto;
+        min-height: 60vh;
+        min-width: 60vh;
+    }
+
+    #EnviaTuCarta {
+        width: auto;
+        height: auto;
+        min-height: 40vh;
+    }
+
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 2vh;
+        grid-row-gap: 1vh;
+        grid-column-gap: 2vh;
+    }
+
+    .carta {
+        width: 100%;
+        font-size: 2.5vw;
+        height: 17vw;
+    }
+
+    .carta-header, .forma-header, input[type=submit] {
+        font-size: 2.5vw;
+    }
+
+    .carta-photo {
+        top: 45%;
+        width: 9vw;
+        height: 9vw;
+        right: 2vw;
+    }
+
+    .column_img {
+        float: left;
+        padding-left: 40px;
+        width: 50%;
+    }
+
+    .carta-text {
+        font-size: 1.5vw;
+        width: 17vw;
+    }
+}
+
+/*breakpoint for bigger screens, but not extremely big*/
+@media (min-width: 768px) and (max-width: 1048px) {
+
+    #LasCartas {
+        height: auto;
+        min-width: 97vh;
+        width: auto;
+        min-height: 80vh;
+        bottom: 20vw;
+    }
+
+    #EnviaTuCarta {
+        width: auto;
+        height: auto;
+        min-height: 40vh;
+    }
+
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 2vh;
+        grid-row-gap: 1vh;
+        grid-column-gap: 2vh;
+    }
+
+    .carta {
+        width: 100%;
+        font-size: 2.5vw;
+        height: 17vw;
+    }
+
+    .carta-header, .forma-header, input[type=submit] {
+        font-size: 2.5vw;
+    }
+
+    .carta-photo {
+        top: 45%;
+        width: 9vw;
+        height: 9vw;
+        right: 1vw;
+    }
+
+    .column_img {
+        float: left;
+        padding-left: 40px;
+        width: 50%;
+    }
+
+    .carta-text {
+        font-size: 1.5vw;
+        width: 17vw;
+    }
+}
+
+/*initial*/
+#Inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+"""background-image: url('../images/1920-merry-christmas-background-with-copy-space.jpg');"""
+background-repeat: no-repeat;
+    background-size: cover;
+    color: #302c23;
+    padding-bottom: 3vw;
+
+}
+@keyframes AnimacionLetras {
+    from{color: #c1b089
+    }
+    to{color: goldenrod}
+}
+
+/*navigation bar should change depending on the device*/
+#Navegacion{
+    margin: 0;
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.website-name, #Navegacion a{
+    text-align: center;
+    flex-grow: 1;
+    font-family: fontMainPage, serif;
+    font-size: 7vmin;
+    color: #605e5e;
+    margin: 25px 4px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: break-word;
+    wrap-option: no-wrap;
+}
+
+#Navegacion .dropdown-content a {
+    display: block;
+    text-decoration: none;
+    font-family: fontHeader, serif;
+    font-size: 1.9vw;
+    text-shadow: none;
+    min-width: 12vw;
+    color: black;
+    margin: 2px;
+}
+
+#Navegacion .dropdown a:hover {
+    background-color: #ddd;
+    font-style: italic;
+}
+
+#Navegacion a:hover{
+    animation-name: AnimacionLetras;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+#InicioTitulo {
+    font-family: fontMainPage, serif;
+    margin-top: 10vmax;
+    font-size: 20vmin;
+    text-shadow: #383a43 10px 0 10px;
+    margin-bottom: 1vh;
+}
+@keyframes AnimacionColor {
+    from{background-color: #c3b18a
+    }
+    to{background-color: goldenrod}
+}
+
+
+footer{
+    img{
+        align-self: center;
+        width: 7vh;
+        height: auto;
+    }
+    a{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        text-decoration: none;
+        color: #f0f0f0;
+    }
+    a:hover{
+        background-color: rgb(230, 174, 173, 0.2);
+    }
+    .footerLink{
+        text-align: center;
+        width: auto;
+        padding: 1vh 2%;
+        font-size: 2.5vh;
+    }
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-items: center;
+    color: whitesmoke;
+    background: linear-gradient(to top, rgb(205, 92, 92), rgb(205, 92, 92, 8));
+}
+#footerImages{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px 0 0;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    color: #302f2f;
+    background: #f1f1f1;
+    border-radius: 0.25rem 1rem 0.25rem 1rem;
+    width: 3vw;
+}
