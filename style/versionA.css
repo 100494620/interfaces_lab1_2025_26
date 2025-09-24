@@ -33,12 +33,23 @@ input {
 * {
     cursor: url(../images/plane.png), auto;
 }
+#Inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../images/back_register.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #c2b28c;
+}
 /*container for the form*/
 .forma {
     width: 60%;
     height: auto;
-    margin-top: 4vw;
-    background: rgba(140, 158, 188, 0.5);
+    margin-top: 6vw;
+    background: rgba(140, 158, 188, 0.8);
     border-radius: 3vmin;
     position: relative;
     display: flex;
@@ -86,6 +97,7 @@ input {
 
 .forma-text {
     white-space: pre-line;
+
 }
 
 /*submit button position*/
@@ -172,209 +184,6 @@ label[for="file"], label[for="bday"] {
 #consent, label[for="consent"] {
     margin-top: 1.4vw;
 }
-/*breakpoint for devices less then 600px*/
-@media (max-width: 600px) {
-
-    #PapaNoel {
-        font-size: 3vw;
-    }
-
-    .line {
-        border-bottom: 1px solid #a83a3a;
-        padding-top: 15px;
-        width: 50%;
-    }
-
-    .papa-image {
-        width: 80%;
-        padding-top: 50%;
-    }
-
-    .icon {
-        width: 1.5rem;
-        height: auto;
-        vertical-align: middle;
-    }
-
-    .icon-description {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.7rem;
-    }
-
-    .icon-desc-text {
-        padding:0;
-        margin: 0;
-        font-size: 3vw;
-    }
-
-    /*quién es papa noel header*/
-    .papa-header {
-        font-size: 1.8rem;
-    }
-    /*todas las cartas*/
-    #LasCartas {
-        align-content: center;
-        justify-content: center;
-        min-height: 60vh;
-    }
-
-    .cartas-grind {
-        grid-template-columns: 1fr;
-    }
-
-    .carta {
-        width: 100%;
-        height: 16vw;
-        font-size: 3vw;
-    }
-
-    .carta-text {
-        font-size: 1.5vw;
-        width: 20vw;
-    }
-
-    .carta-header, .forma-header, input[type=submit] {
-        font-size: 4vw;
-    }
-
-    .carta-photo {
-        top: 40%;
-        width: 9vw;
-        height: 9vw;
-    }
-
-    .column_img {
-        float: left;
-        padding-left: 40px;
-        width: 30%;
-    }
-
-    #EnviaTuCarta {
-        width: auto;
-        height: auto;
-        min-height: 40vh;
-    }
-
-    .forma {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 3vw;
-    }
-
-    .forma-header {
-        padding-bottom: 7vw;
-    }
-}
-
-/*breakpoint for the middle-scaled devices*/
-@media (min-width: 600px) and (max-width: 768px) {
-
-    #LasCartas {
-        height: auto;
-        min-height: 60vh;
-        min-width: 60vh;
-    }
-
-    #EnviaTuCarta {
-        width: auto;
-        height: auto;
-        min-height: 40vh;
-    }
-
-    .cartas-grind {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding-top: 2vh;
-        grid-row-gap: 1vh;
-        grid-column-gap: 2vh;
-    }
-
-    .carta {
-        width: 100%;
-        font-size: 2.5vw;
-        height: 17vw;
-    }
-
-    .carta-header, .forma-header, input[type=submit] {
-        font-size: 2.5vw;
-    }
-
-    .carta-photo {
-        top: 45%;
-        width: 9vw;
-        height: 9vw;
-        right: 2vw;
-    }
-
-    .column_img {
-        float: left;
-        padding-left: 40px;
-        width: 50%;
-    }
-
-    .carta-text {
-        font-size: 1.5vw;
-        width: 17vw;
-    }
-}
-
-/*breakpoint for bigger screens, but not extremely big*/
-@media (min-width: 768px) and (max-width: 1048px) {
-
-    #LasCartas {
-        height: auto;
-        min-width: 97vh;
-        width: auto;
-        min-height: 80vh;
-        bottom: 20vw;
-    }
-
-    #EnviaTuCarta {
-        width: auto;
-        height: auto;
-        min-height: 40vh;
-    }
-
-    .cartas-grind {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding-top: 2vh;
-        grid-row-gap: 1vh;
-        grid-column-gap: 2vh;
-    }
-
-    .carta {
-        width: 100%;
-        font-size: 2.5vw;
-        height: 17vw;
-    }
-
-    .carta-header, .forma-header, input[type=submit] {
-        font-size: 2.5vw;
-    }
-
-    .carta-photo {
-        top: 45%;
-        width: 9vw;
-        height: 9vw;
-        right: 1vw;
-    }
-
-    .column_img {
-        float: left;
-        padding-left: 40px;
-        width: 50%;
-    }
-
-    .carta-text {
-        font-size: 1.5vw;
-        width: 17vw;
-    }
-}
 
 /*initial*/
 #Inicio {
@@ -424,21 +233,11 @@ background-repeat: no-repeat;
     wrap-option: no-wrap;
 }
 
-#Navegacion .dropdown-content a {
-    display: block;
-    text-decoration: none;
-    font-family: fontHeader, serif;
-    font-size: 1.9vw;
-    text-shadow: none;
-    min-width: 12vw;
-    color: black;
-    margin: 2px;
+.website-name {
+    color: #e3b87e;
+    -webkit-text-stroke: 1.5px #1e1717;
 }
 
-#Navegacion .dropdown a:hover {
-    background-color: #ddd;
-    font-style: italic;
-}
 
 #Navegacion a:hover{
     animation-name: AnimacionLetras;
@@ -510,4 +309,58 @@ footer{
     background: #f1f1f1;
     border-radius: 0.25rem 1rem 0.25rem 1rem;
     width: 3vw;
+}
+
+.top-right {
+    padding-top: 1vw;
+}
+@media (max-width: 600px) {
+
+    .website-name, #Navegacion a{
+        font-size: 4vmin;
+        margin: 0;
+    }
+    .top-right {
+        padding-top: 3.2vw;
+    }
+    .menu-lang {
+        margin-top: 15px;
+        font-size: 1.4vw;
+        width: 5vw;
+        height: 6vw;
+    }
+    .forma {
+        margin-top: 8vw;
+    }
+
+}
+
+/*breakpoint for the middle-scaled devices*/
+@media (min-width: 600px) and (max-width: 766px) {
+
+    .website-name, #Navegacion a{
+        font-size: 4vmin;
+    }
+    .top-right {
+        padding-top: 3vw;
+    }
+
+    .forma {
+        margin-top: 9vw;
+    }
+
+}
+
+/*breakpoint for bigger screens, but not extremely big*/
+@media (min-width: 766px) and (max-width: 1087px) {
+    .forma {
+        margin-top: 10vw;
+    }
+
+    .website-name, #Navegacion a{
+        font-size: 5.3vmin;
+    }
+    .top-right {
+        padding-top: 2vw;
+    }
 }

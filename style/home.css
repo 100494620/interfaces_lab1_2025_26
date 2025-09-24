@@ -631,7 +631,6 @@ input {
         font-size: 2vw;
     }
 
-
     .cartas-grind {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -782,7 +781,7 @@ input {
     }
 
     .website-name, #Navegacion a{
-        font-size: 6vmin;
+        font-size: 5.2vmin;
     }
 
     .cartas-grind {
