@@ -1,0 +1,392 @@
+/* =========================================================
+   versionB.css — Estilos íntegros para Versión B
+   ========================================================= */
+
+/* ---------- Fuentes ---------- */
+@font-face { font-family: fontHeader;   src: url("../fonts/Christmas.otf"); }
+@font-face { font-family: fontText;     src: url("../fonts/textStyle.otf"); }
+@font-face { font-family: fontMainPage; src: url("../fonts/MainChirstmas.otf"); }
+
+/* ---------- Base ---------- */
+*{ box-sizing: border-box; cursor: url(../images/plane.png), auto; }
+html, body{ height: 100%; }
+body{
+    margin: 0;
+    background:#fff;
+    color:#302c23;
+    font-family: fontText, serif;
+    font-size: 20px;
+}
+h1,h2,h3,h4,h5,h6{ margin: 4vw; }
+
+/* ---------- Cabecera / Navegación ---------- */
+@keyframes AnimacionLetras { from{color:#c1b089} to{color:goldenrod} }
+
+#Navegacion{
+    margin:0; width:100%; height:6vh;
+    display:flex; align-items:stretch;
+}
+.website-name, #Navegacion a{
+    flex:1; display:flex; align-items:center; justify-content:center;
+    font-family: fontMainPage, serif; font-size:7vmin;
+    color:#605e5e; text-decoration:none;
+    margin:25px 4px; padding:10px; border-radius:10px;
+}
+#Navegacion a:hover{ animation: AnimacionLetras 2s infinite alternate; }
+
+.menu-lang{
+    display:flex; justify-content:center; align-items:center;
+    margin: 20px 10px 0 0;
+    font-family: fontHeader, serif; font-size:1.3vw;
+    color:#302f2f; background:#f1f1f1;
+    border-radius:.25rem 1rem .25rem 1rem; width:3vw;
+}
+.top-right{ margin-top:1vw; }
+
+/* ---------- Layout principal (¡sin spans!) ---------- */
+#Inicio{
+    display:flex; flex-direction:column; align-items:center; width:100%;
+    padding-bottom:3vw;
+}
+
+/* ====== GRID PRINCIPAL (arreglo) ====== */
+.wrapper-main{
+    margin-top: 3vh;
+    width: 96%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;      /* 2 columnas: contenido + lateral */
+    gap: 3vw;
+    grid-auto-rows: minmax(12vw, auto);  /* como en home: filas por contenido con altura mínima */
+    align-items: start;                   /* que no “estiren” verticalmente */
+}
+
+/* Bloques de la columna izquierda */
+.first_container{
+    grid-column: 1;
+    grid-row: auto;
+    height: 12vw;                         /* como en home (tu hero) */
+}
+
+.second_container{
+    grid-column: 1;
+    grid-row: auto;
+    height: auto;                         /* que crezca por contenido */
+    background: rgba(90,81,81,0.25);
+    position: relative;                   /* para posicionar bien las flechas */
+    border-radius: .8vw;
+}
+
+.fourth-container{
+    grid-column: 1;
+    grid-row: auto;
+    border-radius: .8vw;
+    background: rgba(90,81,81,0.25);
+}
+
+/* Columna derecha (lateral) */
+.third_container{
+    grid-column: 2;
+    grid-row: 1 / span 3;                 /* ocupa la altura de 3 filas */
+    align-self: start;                     /* que no “reparta” su altura */
+    background: rgba(90,81,81,0.25);
+    border-radius: .8vw;
+    /* opcional: dejarla fija al hacer scroll
+    position: sticky; top: 12px;
+    */
+}
+
+/* ====== FLECHAS DEL CARRUSEL ====== */
+.next-button, .back-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(39,88,124,.79);
+    color:#fff;
+    border-radius:7px;
+    border:1px solid #183d61;
+    font-family: fontHeader, serif;
+    font-size: 1.2vw;
+    padding: .35em .7em;
+    cursor: pointer;
+}
+
+.back-button{ left: 1.6vw; }
+.next-button{ right: 1.6vw; }           /* mejor que calcular left al % */
+
+
+.venta-container{
+    position:relative;
+    width: 92%;
+    margin: 1rem auto 0;
+    padding: 2vw;
+    border-radius:.8vw;
+    display:flex; flex-direction:column; justify-content:flex-start;
+    background-image:url('../images/japan.jpg');
+    background-size:cover; background-position:center;
+    min-height: 16vw;          /* altura cómoda sin vaciar */
+}
+
+.venta-container-left,
+.venta-container-right,
+.venta-container-middle{
+    background: rgba(255,255,255,.74);
+    border-radius:.5vw; padding:.8vw;
+}
+.venta-container-left  { float:left;  width:auto; }
+.venta-container-right { float:right; width:10%; }
+.venta-container-middle{
+    width:100%; margin-top:5vw; display:flex; flex-direction:column;
+}
+
+.venta-container-header{
+    text-align:left; font-size:1.8vw; font-family: fontHeader, serif;
+    margin: 0 1.5vw 1.5vw 3vw;
+}
+.venta-container-text{
+    font-size:1.5vw; color:#423d3d; font-family: fontHeader, serif; white-space:pre-line;
+}
+.button-comprar{
+    align-self:flex-end; margin-top:1rem;
+    background:#2c2727; color:#fff; padding:.7vw 1.8vw;
+    border:none; border-radius:4px; font-family: fontHeader, serif; font-size:1.2rem;
+}
+.button-comprar:hover{ background:#183d61; }
+
+/* ---------- Sidebar (Versión B) ---------- */
+.third_container{
+    border-radius:.8vw; background: rgba(90,81,81,.25);
+    padding-top:.5rem;
+    /* Si quieres que “siga” al hacer scroll, descomenta:
+    position: sticky; top: 12px; */
+}
+
+.side-text-grid{
+    display:grid; grid-template-columns:1fr;
+    width:100%; gap: 1rem; padding: 1rem 1rem 2rem 1rem;
+}
+.text-block{
+    display:grid; padding:1rem; gap:.6rem;
+    background: transparent;
+}
+.side-text-header{
+    margin:0; text-align:left; font-family: fontHeader, serif; font-size:2vw;
+}
+.side-text-options{
+    font-family: fontText, serif; font-size:1rem;
+}
+.line{ border-bottom:2px solid #2b4485; width:100%; margin:1rem 0; }
+
+/* Perfil */
+.profile-card .side-text-options{ display:flex; align-items:center; gap:.8rem; }
+#profileAvatar{
+    width:64px; height:64px; border-radius:10px; object-fit:cover; border:2px solid rgba(0,0,0,.06);
+}
+#profileName{ font-family: fontHeader, serif; font-size:1.1rem; color:#2a2a2a; }
+.button-enter{
+    background:#f6d586; border:1px solid #a14432; border-radius:7px;
+    padding:.55rem .9rem; font-family: fontHeader, serif; cursor:pointer;
+}
+.button-enter:hover{ background:#e6a31f; }
+
+/* Filtros */
+.filter-block .checkbox-list{
+    display:grid; grid-template-columns:1fr 1fr; gap:.45rem .8rem; margin:.6rem 0 .2rem;
+}
+.filter-block .checkbox-list label{ display:flex; align-items:center; gap:.45rem; }
+.filter-block input[type="checkbox"]{ accent-color:#2a578c; }
+.search-bar{ display:flex; align-items:center; gap:.6rem; margin-top:1rem; }
+.search-bar input[type="search"]{
+    flex:1; padding:.55rem .75rem; border-radius:6px; border:none; background:#f1f1f1;
+    font-family: fontText, serif; font-size:1rem; color:#333;
+}
+
+/* Últimos consejos */
+.tips-block ul{ margin:.2rem 0 0 1.1rem; padding:0; }
+.tips-block li{ margin:.25rem 0; }
+.tips-block a{ color:#2a578c; text-decoration:underline; }
+
+/* Form “¿Tienes algún consejo?” */
+.advice-form input[type="text"],
+.advice-form textarea{
+    width:100%; background:#f1f1f1; border:none; border-radius:6px; padding:.55rem .75rem;
+    font-family: fontText, serif; font-size:1rem; color:#333; margin:.35rem 0;
+}
+.advice-form textarea{ resize:vertical; min-height:80px; }
+
+/* Mini calendario */
+.calendar-block .side-text-options > div{
+    background:#f1f1f1; border-radius:8px; padding:.7rem;
+}
+.calendar-block .side-text-options > div > div:first-child{
+    display:flex; align-items:center; justify-content:space-between; margin-bottom:.5rem;
+    font-family: fontHeader, serif;
+}
+.calendar-block .side-text-options > div > div:last-child{
+    display:grid; grid-template-columns:repeat(7,1fr); gap:.28rem; text-align:center; font-size:.95rem;
+}
+.is-today{ outline:2px solid #2a578c; outline-offset:1px; font-weight:700; }
+
+/* ---------- Galería experiencias ---------- */
+.fourth-container{
+    border-radius:.8vw; background: rgba(90,81,81,.25);
+    padding-bottom: 1rem;
+}
+.cartas-grind{
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 3vh; grid-column-gap: 3vh;
+    margin: 2vw 2vw 2vw 3vw;
+}
+.carta{
+    width:100%; height: 12vw;
+    border:.2vmin dashed #114063; background: rgba(95,173,218,.8);
+    border-radius:1vmin; display:grid; grid-template-columns:2fr 1fr; grid-template-rows:auto 1fr; gap:1vw; padding:1vw;
+}
+.carta-header{ grid-column:1/3; text-align:left; font-size:1.25vw; font-family: fontHeader, serif; }
+.carta-photo{ grid-column:1; grid-row:2; width:100%; height:100%; object-fit:cover; border-radius:7px; }
+.carta-like{ grid-column:2; grid-row:2; align-self:center; width:70%; margin-left:.5vw; }
+.cartas-ver-mas-button{
+    grid-column:2; grid-row:2; align-self:end;
+    background: rgba(39,88,124,.85); color:#fff;
+    border:1px solid #183d61; border-radius:7px;
+    height:3vw; font-family: fontHeader, serif; font-size:1vw; cursor:pointer;
+}
+.cartas-ver-mas-button:hover{ background:#e6a31f; }
+
+/* ---------- Footer (newsletter + barra) ---------- */
+.site-footer{
+    background:#2a578c; color:#f0f0f0; width:96%;
+    margin:2rem auto 0; border-radius:.8vw; overflow:hidden; font-family: fontText, serif;
+}
+.site-footer a{ color:#f0f0f0; text-decoration:none; }
+.site-footer a:hover{ text-decoration:underline; }
+
+/* Newsletter */
+.footer-newsletter{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; padding:1rem 1.25rem; background:rgba(255,255,255,.06);
+}
+.nl-title{ margin:0; font-family: fontHeader, serif; font-size:1.1rem; color:#fff; }
+.nl-form{ display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+.nl-form input[type="email"]{
+    padding:.55rem .75rem; border-radius:.5rem; border:none; outline:none;
+    font-family: fontText, serif; min-width:220px; background:#fff; color:#333;
+}
+.nl-btn{
+    background:#f6d586; color:#2a2a2a; border:none; border-radius:.55rem;
+    padding:.55rem .9rem; font-family: fontHeader, serif; cursor:pointer;
+}
+.nl-btn:hover{ background:#e6a31f; }
+
+/* Barra inferior */
+.footer-bar{
+    display:grid; grid-template-columns: 1fr auto auto; align-items:center; gap:1rem;
+    padding:.9rem 1.25rem; border-top:1px solid rgba(255,255,255,.25);
+}
+.copy{ margin:0; font-size:.9rem; color:#e6eef6; }
+.footer-links{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; font-size:.95rem; }
+.footer-social{ display:flex; align-items:center; gap:.8rem; }
+.footer-social img{ width:26px; height:26px; object-fit:contain; transition:transform .2s; }
+.footer-social img:hover{ transform:scale(1.12); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1087px){
+    .website-name, #Navegacion a{ font-size:5.2vmin; }
+    .cartas-grind{ grid-template-columns: repeat(2, 1fr); }
+    .carta{ height: 15vw; }
+}
+@media (max-width: 766px){
+    .website-name, #Navegacion a{ font-size:5vmin; }
+    .wrapper-main{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    .third_container{ grid-column:1; grid-row:2; }
+    .second_container{ grid-column:1; grid-row:3; }
+    .fourth-container{ grid-column:1; grid-row:4; }
+
+    .cartas-grind{ grid-template-columns: 1fr; }
+    .carta{ height:auto; }
+}
+@media (max-width: 600px){
+    .footer-bar{ grid-template-columns:1fr; text-align:center; }
+    .footer-links{ justify-content:center; flex-wrap:wrap; }
+    .footer-social{ justify-content:center; }
+    .footer-newsletter{ flex-direction:column; align-items:stretch; }
+    .nl-form{ margin-left:0; width:100%; justify-content:flex-start; }
+    .nl-form input[type="email"]{ min-width:0; width:100%; }
+}
+
+/* === COMPACTAR: reduce espacios verticales === */
+
+/* Menos separación entre filas del grid principal */
+.wrapper-main{ gap: 1.2vw; }
+
+/* Carrusel con menos margen y sin hueco extra */
+.venta-container{ margin-top: .6vw; }
+
+/* Bloques de la columna derecha un poco más juntos */
+.side-text-grid{ margin: 1.2vw 0 1.2vw 3vw; }
+.text-block{ padding: .7vw; }
+.line{ margin: .6vw 2vw .6vw 3.9vw; }
+
+/* Cabecera de “Experiencias” más pegada y sección más compacta */
+.fourth-container{ padding-top: .6vw; }
+
+/* Footer más pegado al contenido */
+.site-footer{ margin-top: 1rem; }
+
+.first_container{
+    margin-top: 1.2rem;      /* ajusta a tu gusto: 0.8rem–2rem */
+}
+
+/* baja la banda semitransparente dentro del héroe */
+.container-text{
+    margin-top: 6.5vw;       /* antes 4vw; mueve la banda hacia abajo */
+}
+
+/* afinado por tamaños de pantalla */
+@media (max-width: 1087px){
+    .container-text{ margin-top: 8vw; }
+}
+@media (max-width: 600px){
+    .container-text{ margin-top: 10vw; }
+}
+
+/* --- Arreglar desbordes de la columna derecha --- */
+
+/* La rejilla vertical de la derecha debe ocupar el 100% de su columna,
+   nunca un ancho fijo en vw */
+.side-text-grid{
+    width: 100% !important;
+    margin: 0;                /* sin sangría lateral */
+    gap: 1.2rem;
+}
+
+/* Cada bloque ocupa todo el ancho disponible */
+.text-block{ width: 100%; }
+.side-text-options{ margin-left: 0; }
+
+/* Asegura que nada sobrepase el contenedor */
+.third_container{
+    padding: 1rem 1.25rem;
+    overflow: hidden;         /* por si algún hijo insiste */
+}
+.third_container *{ max-width: 100%; box-sizing: border-box; }
+
+/* Busca experiencias: el input debe encoger si hace falta */
+.search-bar{ width: 100%; }
+.search-bar input[type="search"]{
+    width: 100%;
+    min-width: 0;             /* esencial en flex para que pueda encoger */
+}
+
+/* Formularios de “¿Tienes algún consejo?” a ancho completo */
+.advice-form input[type="text"],
+.advice-form textarea{
+    width: 100%;
+}
+
+/* Calendario: que el “card” no se salga del panel */
+.calendar-block .side-text-options > div{
+    width: 100%;
+}
