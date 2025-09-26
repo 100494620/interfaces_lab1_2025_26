@@ -97,7 +97,6 @@ input {
 
 .forma-text {
     white-space: pre-line;
-
 }
 
 /*submit button position*/
@@ -235,7 +234,6 @@ background-repeat: no-repeat;
 
 .website-name {
     color: #e3b87e;
-    -webkit-text-stroke: 1.5px #1e1717;
 }
 
 
@@ -314,24 +312,27 @@ footer{
 .top-right {
     padding-top: 1vw;
 }
+
+/*TODO add footer so it is above the background image*/
 @media (max-width: 600px) {
 
     .website-name, #Navegacion a{
-        font-size: 4vmin;
-        margin: 0;
+        font-size: 4.7vmin;
+        padding: 4px;
     }
     .top-right {
-        padding-top: 3.2vw;
+        padding-top: 5vw;
     }
-    .menu-lang {
-        margin-top: 15px;
-        font-size: 1.4vw;
-        width: 5vw;
-        height: 6vw;
-    }
+
     .forma {
-        margin-top: 8vw;
+        margin-top: 16vw;
     }
+
+    .forma-text {
+        white-space: pre-line;
+        font-size: 1.5vw;
+    }
+
 
 }
 
