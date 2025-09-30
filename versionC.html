@@ -1,113 +1,33 @@
-<!-- 1) Tarjeta de perfil (sustituye al formulario de acceso) -->
-<section class="text-block profile-card" aria-labelledby="perfil-usuario">
-    <h2 id="perfil-usuario" class="side-text-header">Nombre de usuario</h2>
-
-    <div class="side-text-options" style="display:flex; align-items:center; gap:1rem;">
-        <!-- Avatar del usuario (si en localStorage hay userAvatar, se sustituye) -->
-        <img id="profileAvatar" src="images/login-icon.png" alt="Avatar del usuario" style="width:64px;height:64px;border-radius:8px;object-fit:cover;" />
-        <!-- Nombre del usuario (se rellena con localStorage; si no, “Usuario”) -->
-        <strong id="profileName">Usuario</strong>
-        <!-- Botón “Cerrar sesión” (no funcional, redirige a la home) -->
-        <button type="button" class="button-register" style="margin-left:auto;"
-                onclick="window.location.href='home.html'">
-            Cerrar sesión
-        </button>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/versionA.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Mochileros Sin Fronteras</title>
+</head>
+<body>
+<section id="Inicio">
+    <nav id="Navegacion">
+        <div class="website-name">Mochileros Sin Fronteras</div>
+        <a href="#">Inicio</a>
+        <a href="#">Experiencias</a>
+        <a href="#">Consejos</a>
+        <a href="#">Foro</a>
+        <a href="#">Contacto</a>
+        <div class="top-right">
+            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo" />
+        </div>
+        <label for="lang" ></label>
+        <select class="menu-lang" name="lang" id="lang">
+            <option value="ES">ES</option>
+            <option value="ENG">ENG</option>
+            <option value="UA">UA</option>
+            <option value="FR">FR</option>
+        </select>
+    </nav>
 </section>
 
-<div class="line"></div>
 
-<!-- 2) Resto de bloques en la misma grid de la derecha -->
-<div class="side-text-grid">
-
-    <!-- 2.a) Busca experiencias (sustituye Top destinos) -->
-    <section class="text-block filter-block" aria-labelledby="busca-exp">
-        <h3 id="busca-exp" class="side-text-header">Busca experiencias</h3>
-
-        <div class="side-text-options">
-            <!-- Grupo de checkboxes (mínimo 4) -->
-            <div class="checkbox-list" style="display:grid; grid-template-columns:1fr 1fr; gap:.4rem;">
-                <label><input type="checkbox" name="region" value="europa" /> Europa</label>
-                <label><input type="checkbox" name="region" value="asia" /> Asia</label>
-                <label><input type="checkbox" name="region" value="america" /> América</label>
-                <label><input type="checkbox" name="region" value="africa" /> África</label>
-                <label><input type="checkbox" name="region" value="oceania" /> Oceanía</label>
-            </div>
-
-            <!-- Barra de búsqueda con icono (estético) -->
-            <div class="search-bar" style="display:flex; align-items:center; gap:.5rem; margin-top:1rem;">
-                <span aria-hidden="true" style="font-size:1.2rem;">🔍</span>
-                <label for="searchExp" class="sr-only">Buscar experiencias</label>
-                <input id="searchExp" type="search" placeholder="Busca por país, ciudad, tipo de viaje…"
-                       style="flex:1; padding:.5rem; border-radius:6px; border:none; background:#f1f1f1;" />
-            </div>
-        </div>
-    </section>
-
-    <!-- 2.b) Últimos consejos + mini-form (sustituye Consejos rápidos) -->
-    <section class="text-block tips-block" aria-labelledby="ult-consejos">
-        <h3 id="ult-consejos" class="side-text-header">Últimos consejos</h3>
-
-        <div class="side-text-options">
-            <!-- Lista de “enlaces” simulados -->
-            <ul style="margin:0; padding-left:1rem;">
-                <li><a href="#">Cómo ahorrar en hostales muy turísticos</a></li>
-                <li><a href="#">Mejores apps para planear viajes baratos</a></li>
-                <li><a href="#">Evitar comisiones al retirar dinero en Asia</a></li>
-                <li><a href="#">Qué llevar en una mochila de 40L</a></li>
-            </ul>
-
-            <!-- Mini formulario “¿Tienes algún consejo?” (no funcional) -->
-            <form class="advice-form" action="#" method="post" style="margin-top:1rem;">
-                <h4 style="margin:.3rem 0;">¿Tienes algún consejo?</h4>
-                <label for="adv-title" class="sr-only">Título del consejo</label>
-                <input id="adv-title" type="text" placeholder="Título"
-                       style="width:100%; padding:.5rem; border-radius:6px; border:none; background:#f1f1f1; margin:.3rem 0;" />
-
-                <label for="adv-desc" class="sr-only">Descripción del consejo</label>
-                <textarea id="adv-desc" rows="3" placeholder="Descripción breve"
-                          style="width:100%; padding:.5rem; border-radius:6px; border:none; background:#f1f1f1;"></textarea>
-
-                <div style="display:flex; justify-content:flex-end; margin-top:.5rem;">
-                    <button type="submit" class="button-enter">Enviar</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- 2.c) Mini-calendario (sustituye Próximos encuentros) -->
-    <section class="text-block calendar-block" aria-labelledby="mini-cal">
-        <h3 id="mini-cal" class="side-text-header">Calendario</h3>
-
-        <div class="side-text-options">
-            <!-- Calendario estático (no funcional) -->
-            <div style="background:#f1f1f1; border-radius:6px; padding:.6rem;">
-                <!-- Cabecera Mes/Año -->
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:.4rem;">
-                    <strong>Septiembre 2025</strong>
-                    <div aria-hidden="true">‹ ›</div>
-                </div>
-
-                <!-- Rejilla 7 x 6 -->
-                <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:.25rem; text-align:center;">
-                    <!-- Encabezados de días -->
-                    <div><small>Lu</small></div>
-                    <div><small>Ma</small></div>
-                    <div><small>Mi</small></div>
-                    <div><small>Ju</small></div>
-                    <div><small>Vi</small></div>
-                    <div><small>Sá</small></div>
-                    <div><small>Do</small></div>
-
-                    <!-- Celdas (ejemplo simple) -->
-                    <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-                    <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
-                    <div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
-                    <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
-                    <div>28</div><div>29</div><div>30</div><div></div><div></div><div></div><div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<!-- /side-text-grid -->
