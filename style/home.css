@@ -356,6 +356,10 @@ input {
     width: auto;
     font-family: fontText,serif;
     font-size: 2vw;
+    margin-left: 1.5vw;grid-row: 2/3;
+    width: auto;
+    font-family: fontText,serif;
+    font-size: 2vw;
     margin-left: 1.5vw;
 }
 /*experience cartas header*/
