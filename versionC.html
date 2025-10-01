@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style/versionA.css" rel="stylesheet">
+    <link href="style/versionC.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Mochileros Sin Fronteras</title>
@@ -28,6 +28,81 @@
             <option value="FR">FR</option>
         </select>
     </nav>
+    <main class="contenedor-principal">
+        <!-- IZQUIERDA: Pack -->
+        <section class="contenedor-izq">
+            <div class="pack-izq-info">
+                <img src="images/pack-sudeste.jpg" alt="Pack Sudeste Asiático" class="pack-img">
+
+                <div class="pack-header">
+                    <h2 class="pack-titulo">Pack Sudeste Asiático</h2>
+                    <span class="pack-precio">600 €</span>
+                </div>
+
+                <p class="pack-subtitulo">Vietnam & Camboya: buses, hostales y guía de visados</p>
+
+                <div class="pack-descripcion">
+                    <h3>Descripción del pack:</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DERECHA: Formulario (placeholder, si aún no lo tienes) -->
+        <section class="contenedor-der">
+            <h3>Formulario de compra</h3>
+            <!-- aquí va el form -->
+        </section>
+
+    </main>
 </section>
+
+<footer class="site-footer">
+    <!-- Tira superior: newsletter -->
+    <div class="footer-newsletter">
+        <h4 class="nl-title">
+            Suscríbete a la newsletter
+        </h4>
+        <form class="nl-form" action="#" method="post" novalidate>
+            <label
+                    for="nl-email" class="sr-only">Email
+            </label>
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+            <button type="submit" class="nl-btn">Suscribirme</button>
+        </form>
+    </div>
+
+    <!-- Barra inferior: © + enlaces + redes -->
+    <div class="footer-bar">
+        <p class="copy">&copy; 2025 Mochileros Sin Fronteras</p>
+
+        <ul class="footer-links" aria-label="Enlaces legales">
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+
+        <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-instagram-128.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-tiktok-128.png" alt="TikTok">
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-youtube-128.png" alt="YouTube">
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
 
 

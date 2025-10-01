@@ -1,0 +1,397 @@
+/*fonts*/
+@font-face {
+    font-family: fontHeader;
+    src: url("../fonts/Christmas.otf");
+}
+
+@font-face {
+    font-family: fontText;
+    src: url("../fonts/textStyle.otf");
+}
+
+@font-face {
+    font-family: fontMainPage;
+    src: url("../fonts/MainChirstmas.otf");
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: fontText,serif;
+    font-size: 1.3vw;
+}
+
+/*margins for all the built-in headers*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 4vw;
+}
+/*form input fields*/
+input {
+    font-size: 1.3vw;
+    font-family: fontText,serif;
+}
+/*plane for the cursor*/
+* {
+    cursor: url(../images/plane.png), auto;
+}
+
+/* ========== HERO / INICIO (único bloque) ========== */
+#Inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../images/back_register.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #c2b28c;
+    padding-bottom: 3vw; /* añadido del segundo bloque */
+}
+
+/*container for the form*/
+.forma {
+    width: 60%;
+    height: auto;
+    margin-top: 6vw;
+    background: rgba(140, 158, 188, 0.8);
+    border-radius: 3vmin;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2vw;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+/*split of the container into two parts*/
+.forma-left, .forma-right {
+    width: 45%;
+    box-sizing: border-box;
+    padding-bottom: 1vw;
+}
+
+.forma-right { float: right; }
+.forma-left  { float: left; }
+
+/*the biggest field for the sending of a letter*/
+.forma-middle {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/*size on a middle-input field*/
+.forma-middle input[type=text] {
+    height: 10vw;
+}
+
+.forma-header {
+    text-align: center;
+    font-size: 2.3vw;
+    font-family: fontHeader, serif;
+    padding-bottom: 3vw;
+}
+
+.forma-text { white-space: pre-line; }
+
+/*submit button position*/
+.forma-submit {
+    display: flex;
+    margin-top: 11vw;
+    justify-content: flex-end;
+}
+
+/*form input functionality*/
+input[type=text] {
+    width: 100%;
+    padding: 1vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+
+
+/*don't display button for the file*/
+#file { display: none; }
+
+/*submit profile picture button*/
+#button-submit-image {
+    width: 40%;
+    padding: 0.7vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size: 1.3vw;
+    font-family: fontText,serif;
+}
+/*login and password fields*/
+#login, #password{
+    width: 60%;
+    align-content: flex-end;
+}
+#password { margin-top: 6.6vw; }
+
+/*add ai usage here*/
+label[for="file"], label[for="bday"] {
+    display: block;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+#consent, label[for="consent"] { margin-top: 1.4vw; }
+
+@keyframes AnimacionLetras {
+    from { color: #c1b089 }
+    to   { color: goldenrod }
+}
+
+/*navigation bar should change depending on the device*/
+#Navegacion{
+    margin: 0;
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.website-name, #Navegacion a{
+    text-align: center;
+    flex-grow: 1;
+    font-family: fontMainPage, serif;
+    font-size: 7vmin;
+    color: #605e5e;
+    margin: 25px 4px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: break-word;
+    white-space: nowrap; /* <- reemplaza wrap-option */
+}
+
+.website-name { color: #e3b87e; }
+
+#Navegacion a:hover{
+    animation-name: AnimacionLetras;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+#InicioTitulo {
+    font-family: fontMainPage, serif;
+    margin-top: 10vmax;
+    font-size: 20vmin;
+    text-shadow: #383a43 10px 0 10px;
+    margin-bottom: 1vh;
+}
+
+@keyframes AnimacionColor {
+    from { background-color: #c3b18a }
+    to   { background-color: goldenrod }
+}
+
+.menu-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px 0 0;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    color: #302f2f;
+    background: #f1f1f1;
+    border-radius: 0.25rem 1rem 0.25rem 1rem;
+    width: 3vw;
+}
+
+.top-right { padding-top: 1vw; }
+
+/*TODO add footer so it is above the background image*/
+@media (max-width: 600px) {
+    .website-name, #Navegacion a{
+        font-size: 4.7vmin;
+        padding: 4px;
+    }
+    .top-right { padding-top: 5vw; }
+    .forma { margin-top: 16vw; }
+    .forma-text { white-space: pre-line; font-size: 1.5vw; }
+}
+
+/*breakpoint for the middle-scaled devices*/
+@media (min-width: 600px) and (max-width: 766px) {
+    .website-name, #Navegacion a{ font-size: 4vmin; }
+    .top-right { padding-top: 3vw; }
+    .forma { margin-top: 9vw; }
+}
+
+/*breakpoint for bigger screens, but not extremely big*/
+@media (min-width: 766px) and (max-width: 1087px) {
+    .forma { margin-top: 10vw; }
+    .website-name, #Navegacion a{ font-size: 5.3vmin; }
+    .top-right { padding-top: 2vw; }
+}
+
+/*footer*/
+.site-footer {
+    background:#2a578c;
+    color:#f0f0f0;
+    width:100%;
+    margin:0;
+    border-radius:0;
+    font-family: fontText, serif;
+    overflow:hidden;
+}
+
+.site-footer a{ color:#f0f0f0; text-decoration:none; }
+.site-footer a:hover{ text-decoration:underline; }
+
+/* --- Newsletter (tira superior) --- */
+.footer-newsletter{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:1rem 1.25rem;
+    background:rgba(255,255,255,.06);
+}
+
+.nl-title{
+    margin:0;
+    font-family: fontHeader, serif;
+    font-size:1.1rem;
+    color:#fff;
+}
+
+.nl-form{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin-left:auto;
+}
+
+.nl-form input[type="email"]{
+    padding:.55rem .75rem;
+    border-radius:.5rem;
+    border:none;
+    outline:none;
+    font-family: fontText, serif;
+    min-width: 220px;
+    background:#fff;
+    color:#333;
+}
+
+.nl-btn{
+    background:#f6d586;
+    color:#2a2a2a;
+    border:none;
+    border-radius:.55rem;
+    padding:.55rem .9rem;
+    font-family: fontHeader, serif;
+    cursor:pointer;
+}
+.nl-btn:hover{ background:#e6a31f; }
+
+/* oculto visualmente pero accesible */
+.sr-only{
+    position:absolute !important;
+    height:1px; width:1px;
+    overflow:hidden; clip:rect(1px,1px,1px,1px);
+}
+
+/* --- Barra inferior --- */
+.footer-bar{
+    display:grid;
+    grid-template-columns: 1fr auto auto;
+    align-items:center;
+    gap:1rem;
+    padding: .9rem 1.25rem;
+    border-top:1px solid rgba(255,255,255,.25);
+}
+
+.copy{
+    margin:0;
+    font-size:.9rem;
+    color:#e6eef6;
+}
+
+.footer-links{
+    list-style:none;
+    display:flex;
+    gap:1rem;
+    margin:0;
+    padding:0;
+    font-size:.95rem;
+}
+
+.footer-social{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+}
+
+.footer-social img{
+    width:26px; height:26px; object-fit:contain;
+    transition:transform .2s;
+}
+
+/* Layout dos columnas */
+.contenedor-principal{
+    display:flex;
+    gap:2rem;
+    align-items:flex-start;
+    padding:2rem;
+}
+
+/* Columna izquierda: tamaño controlado */
+.contenedor-izq{
+    flex:0 0 420px;      /* ancho fijo aprox. */
+    max-width:420px;
+}
+
+/* Imagen del pack: no a pantalla completa */
+.pack-img{
+    width:100%;
+    height:220px;        /* controla altura */
+    object-fit:cover;    /* recorta sin deformar */
+    border:1px solid #444;
+    border-radius:6px;
+    display:block;       /* evita espacios raros */
+}
+
+/* Título y precio en una fila */
+.pack-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:10px 0 6px;
+}
+.pack-titulo{ margin:0; font-size:1.4rem; }
+.pack-precio{
+    background:#eee;
+    border:1px solid #444;
+    border-radius:8px;
+    padding:.15rem .5rem;
+    font-weight:600;
+}
+
+/* Subtítulo y caja de descripción */
+.pack-subtitulo{ margin:0 0 .75rem; opacity:.8; }
+
+.pack-descripcion{
+    border:1px solid #444;
+    border-radius:6px;
+    padding:.75rem;
+}
+.pack-descripcion h3{ margin:.1rem 0 .5rem; font-size:1rem; }
