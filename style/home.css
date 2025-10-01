@@ -313,7 +313,7 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 3vh;
-    margin: 2vw 0vw 2vw 3vw;
+    margin: 2vw 0vw 2vw 2vw;
 }
 /*experience card*/
 .carta {
@@ -493,7 +493,6 @@ input {
 .venta-container-left {
     float: left;
 }
-
 
 .venta-container-middle {
     background-color: rgba(255, 255, 255, 0.74);
