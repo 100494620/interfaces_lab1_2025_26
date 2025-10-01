@@ -28,39 +28,73 @@
             <option value="FR">FR</option>
         </select>
     </nav>
-    <main class="contenedor-principal">
-        <!-- IZQUIERDA: Pack -->
-        <section class="contenedor-izq">
-            <div class="pack-izq-info">
-                <img src="images/pack-sudeste.jpg" alt="Pack Sudeste Asiático" class="pack-img">
+    <div class="wrapper-main">
+        <div class="left_container">
 
-                <div class="pack-header">
-                    <h2 class="pack-titulo">Pack Sudeste Asiático</h2>
-                    <span class="pack-precio">600 €</span>
+            <div class="top-left">
+                <div class="venta-container-left">
+                    <div class="venta-container-text">Pack Sudeste Asiático</div>
+                </div>
+                <div class="venta-container-right">
+                    <div class="venta-container-text">€600</div>
                 </div>
 
-                <p class="pack-subtitulo">Vietnam & Camboya: buses, hostales y guía de visados</p>
-
-                <div class="pack-descripcion">
-                    <h3>Descripción del pack:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+                <div class="venta-container-middle">
+                    <div class="venta-container-text">Vietnam y Camboya: buses, hostales y gías de visados</div>
                 </div>
             </div>
-        </section>
 
-        <!-- DERECHA: Formulario (placeholder, si aún no lo tienes) -->
-        <section class="contenedor-der">
-            <h3>Formulario de compra</h3>
-            <!-- aquí va el form -->
-        </section>
+            <div class = "bottom-left">
+                <div class="titulo-text">Descripción del Pack</div>
+                <div class="contenido-text">Vietnam y Camboya en 14 días: traslados en bus, 12 noches en hostales seleccionados
+                tours imprescindibles y guía de visados con soporte 24/7</div>
+            </div>
+        </div>
 
-    </main>
+        <div class="right_container">
+            <form class="form-container" id="buy">
+                <input type="text" id="FullName" placeholder="Full Name" name="full-name" required>
+
+                <label for="emailLogin"></label>
+                <input type="text" id="emailLogin" placeholder="Usuario" name="email" required>
+
+                <!-- Campo: Tipo de tarjeta -->
+                <div class="tarjeta">
+                    <label for="cardType">Tipo de tarjeta</label>
+                    <select id="cardType" name="cardType" class="select-split">
+                        <option value="visa">Visa</option>
+                        <option value="mc">Mastercard</option>
+                        <option value="amex">American Express</option>
+                        <option value="maestro">Otro</option>
+                    </select>
+                </div>
+
+                <input type="text" id="card-number" placeholder="Número de tarjeta" name="Número de tarjeta" required>
+                <input type="text" id="owner-name" placeholder="Nombre del titular de la tarjeta" name="owners-name" required>
+
+                <div class="grupo-fecha">
+                    <label for="fechaCaducidad">Fecha de caducidad</label>
+                    <div class="entrada-fecha">
+                        <input type="text" id="fechaCaducidad" name="fechaCaducidad" placeholder="MM / AA" maxlength="5" pattern="\d{2}\s/\s\d{2}" required>
+                        <span class="icono-calendario">🗓️</span>
+                    </div>
+                </div>
+
+                <div class="grupo-cvv">
+                    <label for="codigoCVV">Código CVV</label>
+                    <input type="password" id="codigoCVV" name="codigoCVV" placeholder="***" maxlength="4" required>
+                </div>
+
+                <div class="botones-accion">
+                    <button type="submit" class="boton-comprar">Comprar</button>
+
+                    <button type="reset" class="boton-borrar">Borrar</button>
+                </div>
+        </div>
+    </div>
+
 </section>
-
+<!--#TODO to change footer-->
 <footer class="site-footer">
     <!-- Tira superior: newsletter -->
     <div class="footer-newsletter">
@@ -99,10 +133,58 @@
         </div>
     </div>
 </footer>
+<script src="script/class.js"></script>
+<script src="script/local_storage_ops.js"></script>
+<script src="script/script.js"></script>
+<script src="script/init.js"></script>
+<script src="script/games.js"></script>
+<script src="script/countdown.js"></script>
 
+<!-- ============================================================
+     VÍNCULO A VERSIÓN B + almacenamiento local (simulado)
+     - Al enviar el formulario:
+       1) Guardamos el nombre y, si hay archivo, la imagen en localStorage
+       2) Redirigimos a versionB.html
+     - La Versión B leerá estos valores y mostrará la tarjeta de perfil
+   ============================================================ -->
+<script>
+    (function () {
+        const form   = document.getElementById('NewCardForm');
+        const nameEl = document.getElementById('name');
+        const loginEl = document.getElementById('login');
+        const fileEl = document.getElementById('file');
 
+        if (!form) return;
 
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // no enviamos a servidor; simulamos alta
+
+            // 1) Guardar nombre (o login si no hay nombre)
+            const name = (nameEl.value || loginEl.value || 'Usuario').trim();
+            try {
+                localStorage.setItem('userName', name);
+                // Duplicamos en 'name' por compatibilidad con tu Versión B
+                localStorage.setItem('name', name);
+            } catch (_) {}
+
+            // 2) Guardar avatar si el usuario sube una imagen (como DataURL)
+            const file = fileEl.files && fileEl.files[0];
+            const goToVersionB = () => { window.location.href = 'versionB.html'; };
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (ev) {
+                    try { localStorage.setItem('userAvatar', ev.target.result); } catch (_) {}
+                    goToVersionB();
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // Sin imagen: Version B usará un avatar por defecto
+                try { localStorage.removeItem('userAvatar'); } catch (_) {}
+                goToVersionB();
+            }
+        });
+    })();
+</script>
 </body>
 </html>
-
-
