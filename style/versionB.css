@@ -712,21 +712,29 @@ input {
         align-items: center; /* Centrar el botón Enviar */
     }
 
-    /* Ajuste para el Calendario */
-    ./* Ajuste para el Calendario */
     .calendario-section {
-        width: 90%; /* Hace que ocupe el 90% del ancho del contenedor .third_container */
-        padding: 1vw;
+        width: 95%; /* Un poco más ancho en móvil */
+        margin: 5vw auto;
+        padding: 4vw;
     }
-    .calendario-section h5 {
-        font-size: 4vw; /* Reduce el título "SEPTEMBER 2025" */
-        margin: 1vw 0;
+
+    .calendario h5 {
+        font-size: 5vw; /* Título más grande en móvil */
+        margin-bottom: 4vw;
     }
+
     .calendario th, .calendario td {
-        padding: 1vw;
-        font-size: 3.5vw; /* Reduce la fuente de los números de los días */
-        width: 14%; /* Distribuye el espacio de los 7 días (100%/7 ≈ 14.28%) */
-        height: auto;
+        padding: 3vw 0;
+        font-size: 4vw; /* Fuente grande y legible en móvil */
+    }
+
+    /* Estilo para el día seleccionado */
+    .calendario .highlight {
+        /* Hacemos el círculo mucho más grande para el tacto */
+        width: 8vw;
+        height: 8vw;
+        line-height: 8vw;
+        font-size: 4vw;
     }
 
     /*left bottom container*/
@@ -795,7 +803,7 @@ input {
 }
 
 /*breakpoint for the middle-scaled devices*/
-@media (min-width: 600px) and (max-width: 766px) {
+@media (min-widt: 600px) and (max-width: 766px) {
     /* ... reglas para tablet/intermedio ... */
 }
 /*breakpoint for bigger screens, but not extremely big*/
@@ -822,7 +830,7 @@ input {
 
 .experience-search h5 {
     margin-bottom: 5px; /* acerca los checkboxes al título */
-    margin-top: 10px; /* reduce el espacio superior */
+    margin-top: 0.5px; /* reduce el espacio superior */
     font-size: 30px;
     font-weight: bold;
     text-align: center;  /* centra el texto dentro del bloque */
@@ -884,42 +892,69 @@ input {
 }
 
 
+/* =================================
+   AJUSTES DEL CALENDARIO
+   (Dentro de @media (max-width: 600px))
+   ================================= */
+
+/* =================================
+   ESTILOS DE CALENDARIO (VERSION PC/BASE)
+   ================================= */
+
+/* =================================
+   ESTILOS DE CALENDARIO (VERSION PC/BASE) - CORREGIDO
+   ================================= */
+
 .calendario-section {
-    width: fit-content;
-    border: 2px solid #222;
-    border-radius: 4px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    margin: 8px auto 0;    /* <-- centra con márgenes automáticos */
-
-
-}
-
-.calendario-section h5 {
-    text-align: center;
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.calendario {
-    border-collapse: collapse;
+    /* Mantenemos el tamaño base. Si está en el left_container, debería ocupar 100% */
     width: 100%;
+    margin: 1.5vw 0;
+    padding: 1.2vw;
+    box-sizing: border-box;
+}
+
+.calendario h5 {
+    /* Título del mes (SEPTEMBER 2025) */
+    /* Usamos 'rem' para un tamaño más predecible en PC */
+    font-size: 1.2rem; /* Aumentado ligeramente */
+    margin-bottom: 0.8rem;
     text-align: center;
 }
 
-.calendario th {
-    padding: 4px;
-    font-weight: bold;
+.calendario table {
+    /* Aseguramos que la tabla ocupe todo el ancho para centrar el contenido */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendario th, .calendario td {
+    /* Celdas (días de la semana y números) */
+    padding: 0.5rem 0; /* Más cómodo en 'rem' */
+    font-size: 1rem;   /* Tamaño base legible */
+}
+
+.calendario .highlight {
+    /* 1. Definir dimensiones y centrado vertical */
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: 1rem;
+
+    /* 2. Propiedades del círculo */
+    background-color: #6495ed;
+    color: white;
+    border-radius: 50%;
+
+    /* 3. CLAVE: Tratar el TD como un bloque y centrar su contenido si es posible. */
+    /* Como es un TD, el 'text-align: center' del TD debería bastar para centrar el número. */
+
+    /* Si el desplazamiento persiste, es porque el estilo del círculo está desbordando la celda. */
+    /* Vamos a asegurarnos de que la celda se centre verticalmente (si es necesario): */
+    vertical-align: middle;
 }
 
 .calendario td {
-    padding: 6px;
-    width: 28px;
-    height: 28px;
-    position: relative;
-}
-
-.calendario td.highlight {
-    background: rgba(80,140,255,0.35);
-    border-radius: 50%;
+    text-align: center; /* VITAL: Centra el texto (el número del día) horizontalmente */
+    padding: 0.5rem 0;  /* Mantiene el espaciado vertical */
+    font-size: 1rem;
 }
