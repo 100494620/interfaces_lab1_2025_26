@@ -76,6 +76,7 @@
     border-radius:.8vw;
     font-family: fontText, serif;
     overflow:hidden; /* redondeado limpio */
+
 }
 
 .site-footer a{ color:#f0f0f0; text-decoration:none; }
@@ -136,7 +137,7 @@
 
 /* --- Barra inferior --- */
 .footer-bar{
-    display:grid;
+    display:flex;
     grid-template-columns: 1fr auto auto;
     align-items:center;
     gap:1rem;
@@ -822,14 +823,10 @@ input {
 
 /*left part______________*/
 .experience-search-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    width: 100%;
-    font-size: 2vw;
-    margin-bottom: 20px;
-
+    grid-row: 1/2;
+    text-align: left;
+    font-family: fontHeader, serif;
+    font-size: 1.8vw;
 }
 
 .experience-searchbar{
@@ -849,11 +846,12 @@ input {
 }
 
 .consejos h5 {
-    margin-bottom: 20px; /* acerca los checkboxes al título */
-    margin-top: 15px; /* reduce el espacio superior */
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;  /* centra el texto dentro del bloque */
+    grid-row: 1/2;
+    text-align: center;
+    font-family: fontHeader, serif;
+    font-size: 2vw; /* centra el texto dentro del bloque */
+    margin-bottom: 2vw;
+    margin-top: 1vw;
 }
 .ultimos-consejos-container{
     display: flex;
