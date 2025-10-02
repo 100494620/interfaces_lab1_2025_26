@@ -313,7 +313,7 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 3vh;
-    margin: 2vw 0vw 2vw 3vw;
+    margin: 2vw 0 2vw 3vw;
 }
 /*experience card*/
 .carta {
@@ -353,10 +353,6 @@ input {
 /*text block list entries*/
 .side-text-options {
     grid-row: 2/3;
-    width: auto;
-    font-family: fontText,serif;
-    font-size: 2vw;
-    margin-left: 1.5vw;grid-row: 2/3;
     width: auto;
     font-family: fontText,serif;
     font-size: 2vw;
@@ -829,7 +825,7 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: left;
+
     width: 100%;
     font-size: 2vw;
     margin-bottom: 20px;
@@ -840,7 +836,6 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: left;
     width: 100%;
     font-size: 2vw;
 }
@@ -875,7 +870,6 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    align-items: left;
     width: 100%;
     font-size: 1.5vw;
     margin-bottom: 20px;
