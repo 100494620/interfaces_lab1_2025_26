@@ -343,16 +343,16 @@ input {
 
 /*footer*/
 /* >>> REGLA BASE DEL FOOTER CORREGIDA PARA ANCHO COMPLETO Y ALINEACIÓN EN PC Y MÓVIL <<< */
-.site-footer {
-    background: #2a578c; /* Fondo Azul */
-    color: #f0f0f0;
-    width: 100%;       /* CLAVE: Ocupa todo el ancho disponible */
-    margin: 0;         /* CLAVE: Elimina los márgenes laterales que lo centraban o encogían */
-    border-radius: 0;  /* CLAVE: Elimina border-radius si no quieres bordes redondeados */
+.site-footer{
+    background:#2a578c;
+    color:#f0f0f0;
+    width:96%;
+    margin:2rem auto 0;
+    border-radius:.8vw;
     font-family: fontText, serif;
-    overflow: hidden;
-}
+    overflow:hidden; /* redondeado limpio */
 
+}
 
 .site-footer a{ color:#f0f0f0; text-decoration:none; }
 .site-footer a:hover{ text-decoration:underline; }
@@ -372,7 +372,6 @@ input {
     font-family: fontHeader, serif;
     font-size:1.1rem;
     color:#fff;
-    /* Ajuste de tamaño de fuente para PC, si es necesario */
 }
 
 .nl-form{
@@ -413,8 +412,8 @@ input {
 
 /* --- Barra inferior --- */
 .footer-bar{
-    display:grid; /* Mantenemos grid para PC */
-    grid-template-columns: 1fr auto auto; /* 3 columnas */
+    display:flex;
+    grid-template-columns: 1fr auto auto;
     align-items:center;
     gap:1rem;
     padding: .9rem 1.25rem;
@@ -446,10 +445,7 @@ input {
     width:26px; height:26px; object-fit:contain;
     transition:transform .2s;
 }
-
-/* =================================
-   MEDIA QUERIES (Ajustes para Responsive)
-   ================================= */
+.footer-social img:hover{ transform:scale(1.12); }
 
 /* --- Móvil (0px a 600px) --- */
 @media (max-width: 600px) {
@@ -517,6 +513,10 @@ input {
         width: 8vw; /* Iconos más grandes en móvil */
         height: 8vw;
     }
+    .footer-newsletter {
+        font-size: 2.5vw;
+    }
+
 }
 
 
