@@ -57,6 +57,9 @@
     overflow-wrap: break-word;
     wrap-option: no-wrap;
 }
+.website-name {
+    color: #e3b87e;
+}
 /*navegation bar when putting cursor on it*/
 #Navegacion a:hover{
     animation-name: AnimacionLetras;
