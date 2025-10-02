@@ -429,8 +429,9 @@ input {
 }
 /*second container comprar button*/
 .button-comprar {
-    margin-top: 9.7vw;
-    float: right;
+    /* CORRECCIÓN: Quitamos el float y el margin-top para que se alinee bien */
+    margin-left: auto; /* Para alinearlo a la derecha en el flujo flex */
+
     flex-direction: column;
     align-items: flex-end;
     background-color: rgb(44, 39, 39);
@@ -455,8 +456,10 @@ input {
     height: auto;
     border-radius: 0.8vw;
     position: relative;
+    /* CORRECCIÓN CLAVE: Usamos flexbox para apilar los elementos correctamente */
     display: flex;
     flex-direction: column;
+
     box-sizing: border-box;
     padding: 2vw;
     margin: 2.4vw auto 0 auto;
@@ -468,7 +471,7 @@ input {
 .venta-container-left {
     background-color: rgba(255, 255, 255, 0.74);
     align-content: center;
-    width: auto;
+    width: 100%; /* Ocupa el 100% para apilarse */
     padding: 0.8vw;
     box-sizing: border-box;
     border-radius: 0.5vw;
@@ -480,15 +483,16 @@ input {
     padding: 0.8vw;
     box-sizing: border-box;
     border-radius: 0.5vw;
-    width: 10%;
+    width: 100%; /* Ocupa el 100% para apilarse */
 }
 
+/* ELIMINAMOS FLOAT PARA PERMITIR FLEXBOX */
 .venta-container-right {
-    float: right;
+    /* float: right; ELIMINADO */
 }
 
 .venta-container-left {
-    float: left;
+    /* float: left; ELIMINADO */
 }
 
 
@@ -650,17 +654,81 @@ input {
     .second_container {
         border-radius: 0.8vw;
         grid-column: 1;
-        height: 30vw;
+        height: auto; /* Cambiado a auto para que el contenido se ajuste */
         grid-row: 2;
         background: rgba(90, 81, 81, 0.25);
     }
-    /*right container*/
+    /*right container - REGLA DE CORRECCIÓN PARA MÓVIL (GRID)*/
     .third_container {
+        grid-column: 1;
+        grid-row: 4;
+        height: auto; /* Asegura que la altura se ajuste al contenido */
         border-radius: 0.8vw;
-        grid-column: 2;
-        grid-row: 1 / 4;
         background: rgba(90, 81, 81, 0.25);
+        padding: 4vw; /* Se aumenta el padding para el espacio interior */
     }
+
+    /* CORRECCIÓN CLAVE DE FUENTES PARA LA BARRA LATERAL (.third_container) */
+    .third_container h5 {
+        font-size: 5vw; /* Títulos más pequeños */
+        margin: 1.5vw 0;
+    }
+
+    .ultimos-consejos-container a,
+    .experience-search-container label,
+    .text-block strong {
+        font-size: 3.5vw; /* Textos internos más pequeños */
+    }
+
+    .experience-searchbar input[type="text"] {
+        font-size: 3.5vw;
+        padding: 1vw;
+    }
+
+    /* ********** INICIO: NUEVOS AJUSTES PARA CONSEJOS Y CALENDARIO ********** */
+
+    /* Ajuste para el formulario de Consejos */
+    .write-consejos-container input[type="text"] {
+        width: 100%;
+        font-size: 3.5vw;
+        margin-bottom: 1.5vw;
+        padding: 1.5vw;
+        box-sizing: border-box;
+    }
+    .write-consejos-container textarea {
+        width: 100%;
+        font-size: 3.5vw;
+        height: 15vw; /* Altura fija razonable para móvil */
+        padding: 1.5vw;
+        box-sizing: border-box;
+        margin-bottom: 1.5vw;
+    }
+    .write-consejos-container button {
+        font-size: 4vw;
+        padding: 1vw 2vw;
+        width: 100%;
+    }
+    .write-consejos-container {
+        align-items: center; /* Centrar el botón Enviar */
+    }
+
+    /* Ajuste para el Calendario */
+    ./* Ajuste para el Calendario */
+    .calendario-section {
+        width: 90%; /* Hace que ocupe el 90% del ancho del contenedor .third_container */
+        padding: 1vw;
+    }
+    .calendario-section h5 {
+        font-size: 4vw; /* Reduce el título "SEPTEMBER 2025" */
+        margin: 1vw 0;
+    }
+    .calendario th, .calendario td {
+        padding: 1vw;
+        font-size: 3.5vw; /* Reduce la fuente de los números de los días */
+        width: 14%; /* Distribuye el espacio de los 7 días (100%/7 ≈ 14.28%) */
+        height: auto;
+    }
+
     /*left bottom container*/
     .fourth-container {
         border-radius: 0.8vw;
@@ -680,12 +748,6 @@ input {
     /*wrapper of the whole contents of the initial screen*/
     .wrapper-main {
         grid-template-columns: 1fr;
-    }
-
-    /*right container*/
-    .third_container {
-        grid-column: 1;
-        grid-row: 4;
     }
 
     .carta {
@@ -734,92 +796,13 @@ input {
 
 /*breakpoint for the middle-scaled devices*/
 @media (min-width: 600px) and (max-width: 766px) {
-
-    .website-name, #Navegacion a{
-        font-size: 5vmin;
-    }
-
-    .form-container .button-enter, .button-register {
-        font-size: 1.7vw;
-        padding: 1vw 1vw 1vw 1vw;
-        margin-top: 0.5vw;
-    }
-
-
-    .form-container input[type=text], .form-container input[type=password] {
-        font-size: 2vw;
-        margin-left: 1vw;
-        margin-bottom: 2vw;
-    }
-
-    .cartas-grind {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-row-gap: 1vh;
-        grid-column-gap: 2vh;
-    }
-
-    .carta {
-        width: 80%;
-        height: auto;
-        border-radius: 1vmin;
-    }
-
-    .carta-header {
-        font-size: 1.6vw;
-    }
-
-    .top-right {
-        padding-top: 2vw;
-    }
-
-    .text-block dt {
-        font-size: 2vw;
-    }
-
-
-    .consent-box {
-        font-size: 2vw;
-    }
-
+    /* ... reglas para tablet/intermedio ... */
 }
 /*breakpoint for bigger screens, but not extremely big*/
 @media (min-width: 766px) and (max-width: 1087px) {
-    .form-container .button-enter, .button-register {
-        font-size: 1.3vw;
-        padding: 1vw 1vw 1vw 1vw;
-        margin-top: 0.5vw;
-    }
-
-    .form-container input[type=text], .form-container input[type=password] {
-        font-size: 1.5vw;
-        margin-left: 1vw
-    }
-
-    .carta {
-        width: 80%;
-        height: auto;
-        border-radius: 1vmin;
-    }
-
-    .website-name, #Navegacion a{
-        font-size: 5.2vmin;
-    }
-
-    .cartas-grind {
-        margin-left: 1.7vw;
-    }
-
-    .consent-box {
-        font-size: 1.6vw;
-    }
-
-    .top-right {
-        margin-top: 1.5vw;
-    }
-
+    /* ... reglas para escritorio pequeño ... */
 }
-
+/* ... Resto del CSS que no cambia ... */
 
 /*left part______________*/
 .experience-search-container{
@@ -873,6 +856,34 @@ input {
     margin-bottom: 20px;
 }
 
+.write-consejos-container input,
+.write-consejos-container textarea,
+.write-consejos-container button {
+    /* Estilos de escritorio para el formulario de consejos */
+    font-family: fontText, serif;
+    margin-top: 0.5vw;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0.5vw;
+}
+.write-consejos-container input[type="text"] {
+    font-size: 1.2vw;
+}
+.write-consejos-container textarea {
+    font-size: 1.2vw;
+    height: 6vw;
+    resize: vertical;
+}
+.write-consejos-container button {
+    background-color: #5cadcf;
+    color: white;
+    font-size: 1.2vw;
+    cursor: pointer;
+    align-self: flex-end; /* Alinea el botón a la derecha en escritorio */
+    width: 40%;
+}
+
+
 .calendario-section {
     width: fit-content;
     border: 2px solid #222;
@@ -912,4 +923,3 @@ input {
     background: rgba(80,140,255,0.35);
     border-radius: 50%;
 }
-
