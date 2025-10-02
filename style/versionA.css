@@ -119,7 +119,7 @@ input[type=text] {
 }
 
 /*submit button functionality*/
-input[type=submit] {
+.submit-button-forma {
     background-color: rgba(39, 88, 124, 0.79);
     color: white;
     padding: 1vw 2vw;
@@ -129,10 +129,11 @@ input[type=submit] {
     font-size: 1.4vw;
 }
 /*change of the color while clicking on submit button*/
-input[type=submit]:hover {
+.submit-button-forma:hover {
     background-color: #e19c38;
     border: 0.2vmin solid #183d61;
 }
+
 /*consent box*/
 .consent-box {
     display: flex;

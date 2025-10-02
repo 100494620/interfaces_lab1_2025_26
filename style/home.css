@@ -338,10 +338,11 @@ input {
     box-sizing: border-box;
 }
 /*text block list container*/
-.text-block dt {
+.text-block dd {
     margin-bottom: 2vw;
     margin-top: 2vw;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
+    margin-left: 3vw;
 }
 /*header of text block*/
 .side-text-header{
@@ -353,10 +354,6 @@ input {
 /*text block list entries*/
 .side-text-options {
     grid-row: 2/3;
-    width: auto;
-    font-family: fontText,serif;
-    font-size: 2vw;
-    margin-left: 1.5vw;grid-row: 2/3;
     width: auto;
     font-family: fontText,serif;
     font-size: 2vw;
@@ -610,7 +607,7 @@ input {
         padding-top: 4vw;
     }
 
-    .text-block dt {
+    .text-block dd {
         font-size: 2vw;
     }
     .text-block {
@@ -637,7 +634,7 @@ input {
         font-size: 1.6vw;
     }
 
-    .text-block dt {
+    .text-block dd {
         font-size: 2vw;
     }
 

@@ -18,7 +18,7 @@
         <a href="#">Foro</a>
         <a href="#">Contacto</a>
         <div class="top-right">
-            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo" />
+            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo">
         </div>
         <label for="lang" ></label>
         <select class="menu-lang" name="lang" id="lang">
@@ -58,7 +58,7 @@
                 <label class="forma-text" for="password"></label>
                 <input type="text" id="password" name="password" placeholder="password">
                 <div class="forma-submit">
-                    <input type="submit" value="Guardar datos y acceder">
+                    <button type="button" class="submit-button-forma" onclick="window.location.href='versionB.html'">Guardar datos y acceder</button>
                 </div>
             </div>
         </form>
@@ -103,58 +103,5 @@
         </div>
     </div>
 </footer>
-<script src="script/class.js"></script>
-<script src="script/local_storage_ops.js"></script>
-<script src="script/script.js"></script>
-<script src="script/init.js"></script>
-<script src="script/games.js"></script>
-<script src="script/countdown.js"></script>
-
-<!-- ============================================================
-     VÍNCULO A VERSIÓN B + almacenamiento local (simulado)
-     - Al enviar el formulario:
-       1) Guardamos el nombre y, si hay archivo, la imagen en localStorage
-       2) Redirigimos a versionB.html
-     - La Versión B leerá estos valores y mostrará la tarjeta de perfil
-   ============================================================ -->
-<script>
-    (function () {
-        const form   = document.getElementById('NewCardForm');
-        const nameEl = document.getElementById('name');
-        const loginEl = document.getElementById('login');
-        const fileEl = document.getElementById('file');
-
-        if (!form) return;
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault(); // no enviamos a servidor; simulamos alta
-
-            // 1) Guardar nombre (o login si no hay nombre)
-            const name = (nameEl.value || loginEl.value || 'Usuario').trim();
-            try {
-                localStorage.setItem('userName', name);
-                // Duplicamos en 'name' por compatibilidad con tu Versión B
-                localStorage.setItem('name', name);
-            } catch (_) {}
-
-            // 2) Guardar avatar si el usuario sube una imagen (como DataURL)
-            const file = fileEl.files && fileEl.files[0];
-            const goToVersionB = () => { window.location.href = 'versionB.html'; };
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (ev) {
-                    try { localStorage.setItem('userAvatar', ev.target.result); } catch (_) {}
-                    goToVersionB();
-                };
-                reader.readAsDataURL(file);
-            } else {
-                // Sin imagen: Version B usará un avatar por defecto
-                try { localStorage.removeItem('userAvatar'); } catch (_) {}
-                goToVersionB();
-            }
-        });
-    })();
-</script>
 </body>
 </html>

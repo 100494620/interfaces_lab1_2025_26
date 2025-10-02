@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style/home.css" rel="stylesheet">
-    <link href="style/style_part2.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Mochileros Sin Fronteras</title>
@@ -19,7 +18,7 @@
         <a href="#">Foro</a>
         <a href="#">Contacto</a>
         <div class="top-right">
-            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo" />
+            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo">
         </div>
         <label for="lang" ></label>
         <select class="menu-lang" name="lang" id="lang">
@@ -80,9 +79,11 @@
                         <div class="side-text-header">Top destinos mochilleros</div>
                         <div class="side-text-options">
                             <dl>
-                                <dt>Tailandia</dt>
-                                <dt>Bolivia</dt>
-                                <dt>Nepal</dt>
+                                <!--declared an empty dt here to not ruin a structure-->
+                                <dt></dt>
+                                <dd>Tailandia</dd>
+                                <dd>Bolivia</dd>
+                                <dd>Nepal</dd>
                             </dl>
                         </div>
                     </div>
@@ -90,9 +91,11 @@
                         <div class="side-text-header">Consejos rápidos</div>
                         <div class="side-text-options">
                             <dl>
-                                <dt>Lleva seguro médico</dt>
-                                <dt>Informáte sobr visados</dt>
-                                <dt>Viaja ligero</dt>
+                                <!--declared an empty dt here to not ruin a structure-->
+                                <dt></dt>
+                                <dd>Lleva seguro médico</dd>
+                                <dd>Informáte sobr visados</dd>
+                                <dd>Viaja ligero</dd>
                             </dl>
                         </div>
                     </div>
@@ -100,9 +103,11 @@
                         <div class="side-text-header">Próximos encuentros</div>
                         <div class="side-text-options">
                             <dl>
-                                <dt>Madrid - 12/10</dt>
-                                <dt>Barcelona - 25/10</dt>
-                                <dt>Valencia - 08/11</dt>
+                                <!--declared an empty dt here to not ruin a structure-->
+                                <dt></dt>
+                                <dd>Madrid - 12/10</dd>
+                                <dd>Barcelona - 25/10</dd>
+                                <dd>Valencia - 08/11</dd>
                             </dl>
                         </div>
                     </div>
@@ -113,37 +118,37 @@
             <div class="cartas-grind">
                 <div class="carta" id="carta1">
                     <div class="carta-header">Madrid y sus secretos</div>
-                    <img class="carta-photo" src="../images/madrid.jpg" alt="user photo">
+                    <img class="carta-photo" src="images/madrid.jpg" alt="madrid">
                     <button class="cartas-ver-mas-button">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
                 <div class="carta" id="carta2">
                     <div class="carta-header">Alemania: castillos históricos </div>
-                    <img class="carta-photo" src="../images/germany.jpg" alt="user photo">
+                    <img class="carta-photo" src="images/germany.jpg" alt="germany">
                     <button class="cartas-ver-mas-button">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
                 <div class="carta" id="carta3">
                     <div class="carta-header">París: ruta romántica</div>
-                    <img class="carta-photo" src="../images/paris.jpeg" alt="user photo">
+                    <img class="carta-photo" src="images/paris.jpeg" alt="paris">
                     <button class="cartas-ver-mas-button">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
                 <div class="carta" id="carta4">
                     <div class="carta-header">Japón: samuráis y tecnología</div>
-                    <img class="carta-photo" src="../images/japan_carta.jpg" alt="user photo">
+                    <img class="carta-photo" src="images/japan_carta.jpg" alt="japan">
                     <button class="cartas-ver-mas-button">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
                 <div class="carta" id="carta5">
                     <div class="carta-header">Seoul y cultura de Kpop</div>
-                    <img class="carta-photo" src="../images/seoul.jpg" alt="user photo">
+                    <img class="carta-photo" src="images/seoul.jpg" alt="seoul">
                     <button class="cartas-ver-mas-button">Ver más</button>
-                    <img class="carta-like" src="images/heart.png" alt="like button"><img/>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
                 <div class="carta" id="carta6">
                     <div class="carta-header">Milan - fancy y antiguo</div>
-                    <img class="carta-photo" src="../images/milan.jpg" alt="user photo">
+                    <img class="carta-photo" src="images/milan.jpg" alt="milan">
                     <button class="cartas-ver-mas-button">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
@@ -190,13 +195,5 @@
         </div>
     </div>
 </footer>
-
-
-<script src="script/class.js"></script>
-<script src="script/local_storage_ops.js"></script>
-<script src="script/script.js"></script>
-<script src="script/init.js"></script>
-<script src="script/games.js"></script>
-<script src="script/countdown.js"></script>
 </body>
 </html>
