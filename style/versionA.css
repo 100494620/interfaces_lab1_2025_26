@@ -296,6 +296,61 @@ background-repeat: no-repeat;
         white-space: pre-line;
         font-size: 1.5vw;
     }
+    .footer-bar .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px; /* separación entre iconos */
+        margin-top: 10px;
+    }
+
+    .footer-bar .footer-social .social-link {
+        width: 32px;   /* tamaño fijo en móvil */
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-bar .footer-social .social-link img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        display: block;
+    }
+
+    /* Newsletter en una columna */
+    .footer-newsletter {
+        flex-direction: row;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-newsletter-title,
+    .mail,
+    .newsletter-submit-button {
+        width: 100%;
+    }
+
+    .mail input {
+        width: 90%; /* input más ancho */
+        margin: 0 auto;
+        display: block;
+    }
+
+    .newsletter-submit-button button {
+        width: auto;
+        padding: 8px 16px;
+    }
+
+    .footer-bar,
+    .footer-bar p,
+    .footer-bar a,
+    .footer-newsletter label,
+    .footer-newsletter input,
+    .footer-newsletter button {
+        font-size: 2.5vw !important;
+        }
 
 
 }
@@ -313,7 +368,17 @@ background-repeat: no-repeat;
     .forma {
         margin-top: 9vw;
     }
+    .footer-newsletter-title{
+        font-size: 1.5vw;
+    }
 
+    .footer-newsletter.mail{
+        font-size: 2.5vw;
+    }
+
+    .footer-newsletter.button-comprar{
+        font: 1.5vw/1.5vw serif;
+    }
 }
 
 /*breakpoint for bigger screens, but not extremely big*/
@@ -341,7 +406,17 @@ background-repeat: no-repeat;
     font-family: fontText, serif;
     overflow:hidden;
 }
+.footer-newsletter-title{
+    font-size: 1.5vw;
+}
 
+.footer-newsletter.mail{
+    font-size: 2.5vw;
+}
+
+.footer-newsletter.button-comprar{
+    font: 1.5vw/1.5vw serif;
+}
 
 .site-footer a{ color:#f0f0f0; text-decoration:none; }
 .site-footer a:hover{ text-decoration:underline; }
@@ -434,3 +509,48 @@ background-repeat: no-repeat;
     width:26px; height:26px; object-fit:contain;
     transition:transform .2s;
 }
+
+/* Estilos para los iconos sociales del footer */
+.footer-social img {
+    width: 30px;   /* Cambia el número al tamaño que quieras */
+    height: 30px;  /* Fuerza que todos tengan el mismo alto */
+    object-fit: contain; /* Ajusta sin deformar la imagen */
+    margin: 0 8px; /* Separación entre iconos */
+    transition: transform 0.2s ease-in-out;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1); /* Efecto al pasar el ratón */
+}
+
+.footer-social .social-icon {
+    width: 40px !important;   /* ancho fijo */
+    height: 40px !important;  /* alto fijo */
+    object-fit: contain;      /* asegura que no se deformen */
+    margin: 0 8px;            /* espacio entre iconos */
+    display: inline-block;    /* asegura alineación */
+}
+
+
+.footer-social {
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;
+    gap: 12px; /* separación entre iconos */
+}
+
+.footer-social .social-link {
+    width: 40px;    /* tamaño fijo */
+    height: 40px;   /* cuadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social .social-link img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
