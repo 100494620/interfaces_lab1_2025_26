@@ -28,20 +28,20 @@
             <option value="FR">FR</option>
         </select>
     </nav>
-    <div class="forma">
+    <div class="forma" id="forma_container_reg">
         <div class="forma-header">Registro de nuevos usuarios</div>
-        <form id="NewCardForm">
+        <form id="registerForm">
             <div class="forma-left">
-                <label class="forma-text" for="name"></label>
-                <input type="text" id="name" name="name" placeholder="Nombre">
-                <label class="forma-text" for="email"></label>
-                <input type="text" id="email" name="email" placeholder="Correo electronico">
-                <label class="forma-text" for="bday">Fecha de nacimiento</label>
-                <input type="date" id="bday">
-                <label class="forma-text" for="login"></label>
-                <input type="text" id="login" name="login" placeholder="login">
-                <label class="forma-text" for="file">Subir imagen de perfil</label>
-                <input type="file" id="file" name="filename">
+                <label class="forma-text" for="nameR"></label>
+                <input type="text" id="nameR" name="name" placeholder="Nombre">
+                <label class="forma-text" for="emailR"></label>
+                <input type="text" id="emailR" name="email" placeholder="Correo electronico">
+                <label class="forma-text" for="birthdayR">Fecha de nacimiento</label>
+                <input type="date" id="birthdayR">
+                <label class="forma-text" for="loginR"></label>
+                <input type="text" id="loginR" name="login" placeholder="login">
+                <label class="forma-text" for="fileR">Subir imagen de perfil</label>
+                <input type="file" id="fileR" name="filename">
                 <button type="button" id="button-submit-image">Examinar ...</button>
                 <div class="consent-box">
                     <input type="checkbox" id="consent" name="consent" value="Consented">
@@ -51,14 +51,14 @@
                 </div>
             </div>
             <div class="forma-right">
-                <label class="forma-text" for="surname"></label>
-                <input type="text" id="surname" name="surname" placeholder="Apellidos">
-                <label class="forma-text" for="confirmEmail"></label>
-                <input type="text" id="confirmEmail" name="confirmEmail" placeholder="Confirmar correo">
-                <label class="forma-text" for="password"></label>
-                <input type="text" id="password" name="password" placeholder="password">
+                <label class="forma-text" for="surnameR"></label>
+                <input type="text" id="surnameR" name="surname" placeholder="Apellidos">
+                <label class="forma-text" for="confirmEmailR"></label>
+                <input type="text" id="confirmEmailR" name="confirmEmail" placeholder="Confirmar correo">
+                <label class="forma-text" for="passwordR"></label>
+                <input type="text" id="passwordR" name="password" placeholder="password">
                 <div class="forma-submit">
-                    <button type="button" class="submit-button-forma" onclick="window.location.href='versionB.html'">Guardar datos y acceder</button>
+                    <button type="button" class="submit-button-forma" onclick="onRegistration()">Guardar datos y acceder</button>
                 </div>
             </div>
         </form>
@@ -104,5 +104,9 @@
         </div>
     </div>
 </footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script/class.js"></script>
+<script src="script/local_storage_ops.js"></script>
+<script src="script/script.js"></script>
 </body>
 </html>
