@@ -68,9 +68,7 @@
     animation-iteration-count: infinite;
 }
 /*footer*/
-/*TODO CHANGE FOOTER*/
-/* ==== FOOTER NUEVO ==== */
-/* ===== FOOTER (versión con newsletter + barra inferior) ===== */
+
 .site-footer{
     background:#2a578c;
     color:#f0f0f0;
@@ -425,7 +423,6 @@ input {
     font-size: 1.5vw;
     z-index: 5;
     position: absolute;
-    /*TODO add AI here*/
     top: 50%;
     right: 2vw;
     transform: translateY(-50%);
@@ -597,7 +594,6 @@ input {
 .top-right {
     margin-top: 1vw;
 }
-/*TODO REDO BREAKPOINTS*/
 /*breakpoint for devices less then 600px*/
 @media (max-width: 600px) {
     .form-container .button-enter, .button-register {
@@ -834,4 +830,162 @@ input {
     border-radius: 4px;
     font-family: fontHeader, serif;
     font-size: 1.7vw;
+}
+/*footer*/
+
+.site-footer {
+    background:#2a578c;
+    color:#f0f0f0;
+    width:100%;
+    margin:0;
+    border-radius:0;
+    font-family: fontText, serif;
+    overflow:hidden;
+}
+.footer-newsletter-title{
+    font-size: 1.5vw;
+}
+
+.footer-newsletter.mail{
+    font-size: 2.5vw;
+}
+
+.footer-newsletter.button-comprar{
+    font: 1.5vw/1.5vw serif;
+}
+
+.site-footer a{ color:#f0f0f0; text-decoration:none; }
+.site-footer a:hover{ text-decoration:underline; }
+
+/* --- Newsletter (tira superior) --- */
+.footer-newsletter{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:1rem 1.25rem;
+    background:rgba(255,255,255,.06);
+}
+
+.nl-title{
+    margin:0;
+    font-family: fontHeader, serif;
+    font-size:1.1rem;
+    color:#fff;
+}
+
+.nl-form{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin-left:auto;
+}
+
+.nl-form input[type="email"]{
+    padding:.55rem .75rem;
+    border-radius:.5rem;
+    border:none;
+    outline:none;
+    font-family: fontText, serif;
+    min-width: 220px;
+    background:#fff;
+    color:#333;
+}
+
+.nl-btn{
+    background:#f6d586;
+    color:#2a2a2a;
+    border:none;
+    border-radius:.55rem;
+    padding:.55rem .9rem;
+    font-family: fontHeader, serif;
+    cursor:pointer;
+}
+.nl-btn:hover{ background:#e6a31f; }
+
+/* oculto visualmente pero accesible */
+.sr-only{
+    position:absolute !important;
+    height:1px; width:1px;
+    overflow:hidden; clip:rect(1px,1px,1px,1px);
+}
+
+/* --- Barra inferior --- */
+.footer-bar{
+    display:grid;
+    grid-template-columns: 1fr auto auto;
+    align-items:center;
+    gap:1rem;
+    padding: .9rem 1.25rem;
+    border-top:1px solid rgba(255,255,255,.25);
+}
+
+.copy{
+    margin:0;
+    font-size:.9rem;
+    color:#e6eef6;
+}
+
+.footer-links{
+    list-style:none;
+    display:flex;
+    gap:1rem;
+    margin:0;
+    padding:0;
+    font-size:.95rem;
+}
+
+.footer-social{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+}
+
+.footer-social img{
+    width:26px; height:26px; object-fit:contain;
+    transition:transform .2s;
+}
+
+/* Estilos para los iconos sociales del footer */
+.footer-social img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin: 0 8px; /* Separación entre iconos */
+    transition: transform 0.2s ease-in-out;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1); /* Efecto al pasar el ratón */
+}
+
+.footer-social .social-icon {
+    width: 40px !important;   /* ancho fijo */
+    height: 40px !important;  /* alto fijo */
+    object-fit: contain;      /* asegura que no se deformen */
+    margin: 0 8px;            /* espacio entre iconos */
+    display: inline-block;    /* asegura alineación */
+}
+
+
+.footer-social {
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;
+    gap: 12px; /* separación entre iconos */
+}
+
+.footer-social .social-link {
+    width: 40px;    /* tamaño fijo */
+    height: 40px;   /* cuadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social .social-link img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
 }

@@ -442,7 +442,6 @@ input {
     font-size: 1.5vw;
     z-index: 5;
     position: absolute;
-    /*TODO add AI here*/
     top: 50%;
     right: 2vw;
     transform: translateY(-50%);
@@ -619,7 +618,6 @@ input {
 .top-right {
     margin-top: 1vw;
 }
-/*TODO REDO BREAKPOINTS*/
 /*breakpoint for devices less then 600px*/
 @media (max-width: 600px) {
     .form-container .button-enter, .button-register {
@@ -943,7 +941,6 @@ input {
 }
 
 .calendario table {
-    /* Aseguramos que la tabla ocupe todo el ancho para centrar el contenido */
     width: 100%;
     border-collapse: collapse;
 }

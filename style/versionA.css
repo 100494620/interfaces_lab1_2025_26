@@ -511,9 +511,9 @@ background-repeat: no-repeat;
 
 /* Estilos para los iconos sociales del footer */
 .footer-social img {
-    width: 30px;   /* Cambia el número al tamaño que quieras */
-    height: 30px;  /* Fuerza que todos tengan el mismo alto */
-    object-fit: contain; /* Ajusta sin deformar la imagen */
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
     margin: 0 8px; /* Separación entre iconos */
     transition: transform 0.2s ease-in-out;
 }
