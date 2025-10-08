@@ -227,6 +227,7 @@ input {
     text-align: right;
     font-weight: bold;
     color: #e67e22;
+    width: 50%;
 }
 
 .venta-container-middle {
@@ -429,8 +430,6 @@ input {
 
 
 
-
-
     .copy {
         font-size: 3.5vw;
     }
@@ -510,6 +509,7 @@ input {
     .footer-newsletter button {
         font-size: 2.5vw !important;
     }
+
 }
 
 
@@ -550,7 +550,6 @@ input {
     }
 
 }
-
 
 /* --- Footer Responsive (Ajustes Adicionales) --- */
 
@@ -601,6 +600,7 @@ input {
     padding:1rem 1.25rem;
     background:rgba(255,255,255,.06);
 }
+
 
 .nl-title{
     margin:0;

@@ -277,7 +277,6 @@ background-repeat: no-repeat;
     padding-top: 1vw;
 }
 
-/*TODO add footer so it is above the background image*/
 @media (max-width: 600px) {
 
     .website-name, #Navegacion a{
