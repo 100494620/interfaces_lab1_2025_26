@@ -20,9 +20,14 @@ function onRegistration() {
         return false;
     }
 
-    registerUser(user);
+    if (!registerUser(user)) {
+        return false;
+    }
+
     confirmStored();
-    document.getElementById("registerForm").reset();
+    const registeredUsers = getRegisteredUsers();
+    loadUsersState(user, registeredUsers)
+    isLoggedInWithParams(user);
     window.location.href = "versionB.html";
     return false;
 }
@@ -48,12 +53,13 @@ function registerUser(user) {
     // save user's information
     let registeredUsers = getRegisteredUsers();
 
-    if (registeredUsers.has(user.email)) {
+    if (registeredUsers.has(user.login_name)) {
         alert("User already exists");
+        return false;
     }
-
-    registeredUsers.set(user.email, user);
+    registeredUsers.set(user.login_name, user);
     saveRegisteredUsersToStorage(registeredUsers);
+    return true;
 }
 
 //localStorage.clear();
@@ -61,18 +67,18 @@ function registerUser(user) {
 $("#LoginForm").submit(onLoginUser)
 
 function onLoginUser() {
-    let enteredEmail = document.getElementById("emailLogin").value;
+    let enteredUsuario = document.getElementById("usuarioLogin").value;
     let enteredPassword = document.getElementById("passwordLogin").value;
 
     const registeredUsers = getRegisteredUsers();
 
-    if (!registeredUsers.has(enteredEmail)) {
+    if (!registeredUsers.has(enteredUsuario)) {
         alert("You are not registered!");
         document.getElementById("passwordLogin").value = "";
         return false;
     }
 
-    let user = registeredUsers.get(enteredEmail);
+    let user = registeredUsers.get(enteredUsuario);
     if (user.password !== enteredPassword) {
         alert("Wrong password!");
         document.getElementById("passwordLogin").value = "";
@@ -82,17 +88,16 @@ function onLoginUser() {
     loadUsersState(user, registeredUsers)
 
     isLoggedInWithParams(user);
-
+    window.location.href = "versionB.html";
     return false;
 }
 
 function loadUsersState(user, registeredUsers) {
     user.loginStatus = true;
-    registeredUsers.set(user.email, user);
+    registeredUsers.set(user.login_name, user);
     saveRegisteredUsersToStorage(registeredUsers);
 
-    localStorage.setItem(EMAIL_LS_DATA, user.email);
-    localStorage.setItem(MY_CARDS_LS_DATA, JSON.stringify(Array.from(getUsersCards().get(user.email))))
+    localStorage.setItem(EMAIL_LS_DATA, user.login_name);
 }
 
 function isLoggedIn() {
@@ -121,14 +126,14 @@ function logOut() {
     const user = registeredUsers.get(username);
 
     removeUsersState(user, registeredUsers)
+    window.location.href='home.html'
 }
 
 function removeUsersState(user, registeredUsers) {
     user.loginStatus = false;
-    registeredUsers.set(user.email, user);
+    registeredUsers.set(user.login_name, user);
     saveRegisteredUsersToStorage(registeredUsers)
 
     localStorage.removeItem(EMAIL_LS_DATA);
-    localStorage.removeItem(MY_CARDS_LS_DATA);
 }
 

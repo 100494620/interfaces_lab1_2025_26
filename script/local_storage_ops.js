@@ -1,5 +1,4 @@
 const REGISTERED_USERS_LS_DATA = "registeredUsers";
-const MY_CARDS_LS_DATA = "myCards";
 const EMAIL_LS_DATA = "username";
 
 function getRegisteredUsers() {
