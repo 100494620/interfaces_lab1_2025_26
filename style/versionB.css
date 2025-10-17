@@ -464,7 +464,10 @@ input {
     padding: 2vw;
     margin: 2.4vw auto 0 auto;
     justify-content: flex-start;
-    background-image: url('../images/japan.jpg');"""
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("images/japan.jpg");
 }
 
 /*split of the container into two parts*/
