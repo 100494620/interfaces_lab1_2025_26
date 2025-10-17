@@ -239,7 +239,7 @@
     grid-column: 1;
     grid-row: 1;
     height: 12vw;
-    background-image: url('../images/back1.jpg');
+    background-image: url('../images/sea.jpg');
 }
 /*left second container*/
 .second_container {
@@ -646,7 +646,7 @@ input {
         grid-column: 1;
         grid-row: 1;
         height: 15vw;
-        background-image: url('../images/back1.jpg');
+        background-image: url('../images/sea.jpg');
     }
     /*left second container*/
     .second_container {

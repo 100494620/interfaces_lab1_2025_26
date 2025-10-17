@@ -39,24 +39,29 @@
             <button class="back-button">←</button>
             <div class="venta-container">
                 <form id="NewCardForm">
+                    <!-- Imagen del pack -->
+                    <div class="venta-container-image">
+                        <img id="packImg" src="images/sea.jpg" alt="Pack Sudeste Asiático" style="width:100%; border-radius:10px;">
+                    </div>
+
                     <div class="venta-container-left">
-                        <div class="venta-container-text">Pack Sudeste Asiático</div>
+                        <div id="packTitle" class="venta-container-text">Pack Sudeste Asiático</div>
                     </div>
                     <div class="venta-container-right">
-                        <div class="venta-container-text">€600</div>
-
+                        <div id="packPrice" class="venta-container-text">€600</div>
                     </div>
                     <div class="venta-container-middle">
-                        <div class="venta-container-text">Japon y Vietnam: buses, hostales y gías de visados</div>
+                        <div id="packDesc" class="venta-container-text">
+                            Japón y Vietnam: buses, hostales y guías de visados
+                        </div>
                     </div>
 
-
-                    <button type="button" class="button-comprar" onclick="window.location.href='versionC.html'">Comprar</button>
-
+                    <button type="button" id="buyBtn" class="button-comprar">Comprar</button>
                 </form>
             </div>
-
         </div>
+
+
         <div class="third_container">
                 <form class="form-container" id="LoginForm">
                     <label for="usuarioLogin"></label>
@@ -200,5 +205,6 @@
 <script src="script/class.js"></script>
 <script src="script/local_storage_ops.js"></script>
 <script src="script/script.js"></script>
+<script src="script/carrusel.js"></script>
 </body>
 </html>
