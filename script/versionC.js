@@ -1,6 +1,16 @@
 // script/versionC.js
 $(function () {
+    // --- CONTROL DE ACCESO: solo usuarios logeados ---
+    // getMyInfo() usa localStorage.username (que guarda el login_name)
+    const user = getMyInfo();
 
+    const isLoggedIn = user && user.loginStatus === true;
+    if (!isLoggedIn) {
+        alert("Debe iniciar sesión para acceder a la compra.");
+        // replace() evita que el usuario vuelva con el botón atrás a versionC
+        window.location.replace("home.html");
+        return; // frenamos el resto del script
+    }
     // --- Packs (mismos IDs que usas en el carrusel) ---
     const PACKS = [
         {
