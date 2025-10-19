@@ -1,9 +1,7 @@
 // script/versionB.js
 $(function () {
-    // --- Constantes / helpers ---
     const ADVICES_LS_KEY = "advices"; // lista común para todos los usuarios
 
-    // Sanitiza texto simple (evita HTML inyectado en el título/enlaces)
     const escapeHtml = (s = "") =>
         s.replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
 
@@ -33,8 +31,6 @@ $(function () {
 
         const last3 = all.slice(0, 3);
 
-        // Pinta como enlaces a una página “ficticia” de detalle
-        // (el enunciado permite que esa página NO exista realmente)
         $list.empty();
         last3.forEach(item => {
             const href = `consejo.html?id=${encodeURIComponent(item.id)}`; // no es necesario que exista

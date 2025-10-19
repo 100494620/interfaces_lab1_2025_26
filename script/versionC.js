@@ -1,17 +1,16 @@
 // script/versionC.js
 $(function () {
     // --- CONTROL DE ACCESO: solo usuarios logeados ---
-    // getMyInfo() usa localStorage.username (que guarda el login_name)
-    const user = getMyInfo();
 
+    const user = getMyInfo();
     const isLoggedIn = user && user.loginStatus === true;
     if (!isLoggedIn) {
-        alert("Debe iniciar sesión para acceder a la compra.");
-        // replace() evita que el usuario vuelva con el botón atrás a versionC
-        window.location.replace("home.html");
-        return; // frenamos el resto del script
+      alert("Debe iniciar sesión para acceder a la compra.");
+      window.location.replace("home.html");
+      return;
     }
-    // --- Packs (mismos IDs que usas en el carrusel) ---
+
+
     const PACKS = [
         {
             id: "sea-01",
@@ -49,34 +48,16 @@ $(function () {
         return params.get("pack");
     }
 
-    // --- PINTAR la info del pack (sin carrusel, solo una vez) ---
     (function paintSelectedPack() {
         const packId = getSelectedPackId();
         const pack = PACKS.find(p => p.id === packId);
+        if (!pack) return;
 
-        if (!pack) return; // si no hay param o es inválido, dejamos los textos por defecto
-
-        // Top-left: nombre (ya existe el bloque)
         $(".venta-container-left .venta-container-text").text(pack.title);
-
-        // Top-left derecha: precio
         $(".venta-container-right .venta-container-text").text(`€${pack.price}`);
-
-        // Bottom-left: descripción larga
         $(".bottom-left .contenido-text").text(pack.desc);
-
-        // (Opcional) si quieres también cambiar una imagen/fondo de la columna izquierda:
-        // $(".left_container").css({
-        //   "background-image": `url('${pack.img}')`,
-        //   "background-size": "cover",
-        //   "background-position": "center"
-        // });
     })();
 
-
-    // ----------------------
-    // A partir de aquí, tu lógica de compra/validación (igual que ya tenías)
-    // ----------------------
 
     // --- SELECTORES ---
     const $form = $("#buy");
@@ -93,22 +74,52 @@ $(function () {
     const CARD_NUMBER_REGEX = /^(?:\d{13}|\d{15}|\d{16}|\d{19})$/;
     const CVV_REGEX = /^\d{3}$/;
 
-    function isFutureExpiry(raw) {
-        if (!raw) return false;
-        if (/^\d{2}\s*\/\s*\d{2}$/.test(raw)) {
-            const [mm, aa] = raw.split("/").map(s => s.trim());
-            const year = 2000 + parseInt(aa, 10);
-            const month = parseInt(mm, 10);
-            if (month < 1 || month > 12) return false;
-            const lastOfMonth = new Date(year, month, 0, 23, 59, 59, 999);
-            return lastOfMonth.getTime() > Date.now();
+    function endOfMonth(y, m /*1..12*/) {
+        return new Date(y, m, 0, 23, 59, 59, 999);
+    }
+
+    function parseExpiry(raw) {
+        if (!raw) return null;
+        const s = String(raw).trim();
+
+        // YYYY-MM (input type="month")
+        const m1 = s.match(/^(\d{4})-(\d{2})$/);
+        if (m1) {
+            const y = +m1[1], m = +m1[2];
+            if (m < 1 || m > 12) return null;
+            return endOfMonth(y, m);
         }
-        const d = new Date(raw);
-        if (Number.isNaN(d.getTime())) return false;
-        let year = d.getFullYear();
-        let month = d.getMonth() + 1;
-        const lastOfMonth = new Date(year, month, 0, 23, 59, 59, 999);
-        return lastOfMonth.getTime() > Date.now();
+
+        // MM / AA o MM/AA
+        const m2 = s.match(/^(\d{2})\s*\/\s*(\d{2})$/);
+        if (m2) {
+            const m = +m2[1], yy = +m2[2];
+            if (m < 1 || m > 12) return null;
+            const y = 2000 + yy;
+            return endOfMonth(y, m);
+        }
+
+        // YYYY-MM-DD (por si alguien lo manda así)
+        const d = new Date(s);
+        if (!Number.isNaN(d.getTime())) {
+            const y = d.getFullYear(), m = d.getMonth() + 1;
+            return endOfMonth(y, m);
+        }
+
+        return null;
+    }
+
+    function isFutureExpiry(raw) {
+        const eom = parseExpiry(raw);
+        return !!eom && eom.getTime() > Date.now();
+    }
+
+    if ($expiry.attr("type") === "text") {
+        $expiry.on("input", function () {
+            let v = this.value.replace(/[^\d]/g, "");
+            if (v.length >= 3) v = v.slice(0, 2) + " / " + v.slice(2, 4);
+            this.value = v.slice(0, 7); // "MM / AA"
+        });
     }
 
     function cleanNumber(str) {
