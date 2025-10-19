@@ -1,14 +1,72 @@
 // script/versionC.js
-
 $(function () {
 
-    const user = getMyInfo();
+    // --- Packs (mismos IDs que usas en el carrusel) ---
+    const PACKS = [
+        {
+            id: "sea-01",
+            title: "Pack Sudeste Asiático",
+            price: 600,
+            desc: "Descubre lo mejor de Vietnam y Camboya en una ruta de 14 días. Recorre templos milenarios, crucéate por la bahía de Ha Long y explora los mercados flotantes del delta del Mekong. Incluye transporte entre ciudades, alojamiento en hostales seleccionados y asistencia local 24/7",
+            img:  "images/pack.jpg"
+        },
+        {
+            id: "jpn-02",
+            title: "Japón Express 10 días",
+            price: 980,
+            desc: "Vive una experiencia inolvidable en Japón. Desde los rascacielos de Tokio hasta los templos de Kioto, pasando por el encanto tradicional de Osaka. JR Pass incluido, visitas guiadas, y degustaciones de ramen, sushi y matcha para conocer la auténtica cultura nipona.",
+            img:  "images/japan.jpg"
+        },
+        {
+            id: "vnm-03",
+            title: "Vietnam Norte-Sur",
+            price: 740,
+            desc: "Un viaje de contrastes por Vietnam, desde el bullicio de Hanói hasta la energía moderna de Saigón. Navega por la bahía de Ha Long, disfruta de la gastronomía local en Hoi An y viaja en tren nocturno entre paisajes inolvidables. Incluye transporte, alojamiento y guía local",
+            img:  "images/japan_carta.jpg"
+        },
+        {
+            id: "de-04",
+            title: "Alemania: castillos históricos",
+            price: 520,
+            desc: "DEmbárcate en un recorrido por los castillos más impresionantes de Alemania: Neuschwanstein, Hohenzollern y Wartburg. Un viaje por bosques, pueblos medievales y la Ruta Romántica bávara. Incluye transporte entre ciudades, entradas y alojamiento con encanto",
+            img:  "images/germany.jpg"
+        }
+    ];
 
-    if (!user || !user.loginStatus) {
-        alert("Debe iniciar sesión para acceder a la compra.");
-        window.location.href = "home.html";
-        return;
+    // --- Util: leer ?pack=... ---
+    function getSelectedPackId() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("pack");
     }
+
+    // --- PINTAR la info del pack (sin carrusel, solo una vez) ---
+    (function paintSelectedPack() {
+        const packId = getSelectedPackId();
+        const pack = PACKS.find(p => p.id === packId);
+
+        if (!pack) return; // si no hay param o es inválido, dejamos los textos por defecto
+
+        // Top-left: nombre (ya existe el bloque)
+        $(".venta-container-left .venta-container-text").text(pack.title);
+
+        // Top-left derecha: precio
+        $(".venta-container-right .venta-container-text").text(`€${pack.price}`);
+
+        // Bottom-left: descripción larga
+        $(".bottom-left .contenido-text").text(pack.desc);
+
+        // (Opcional) si quieres también cambiar una imagen/fondo de la columna izquierda:
+        // $(".left_container").css({
+        //   "background-image": `url('${pack.img}')`,
+        //   "background-size": "cover",
+        //   "background-position": "center"
+        // });
+    })();
+
+
+    // ----------------------
+    // A partir de aquí, tu lógica de compra/validación (igual que ya tenías)
+    // ----------------------
 
     // --- SELECTORES ---
     const $form = $("#buy");
@@ -22,30 +80,23 @@ $(function () {
 
     // --- REGEX / HELPERS ---
     const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const CARD_NUMBER_REGEX = /^(?:\d{13}|\d{15}|\d{16}|\d{19})$/; // 13,15,16,19 dígitos
+    const CARD_NUMBER_REGEX = /^(?:\d{13}|\d{15}|\d{16}|\d{19})$/;
     const CVV_REGEX = /^\d{3}$/;
 
-    // Acepta "YYYY-MM" (type=month), "YYYY-MM-DD" (type=date) o "MM / AA" texto
     function isFutureExpiry(raw) {
         if (!raw) return false;
-
-        // Caso "MM / AA"
         if (/^\d{2}\s*\/\s*\d{2}$/.test(raw)) {
             const [mm, aa] = raw.split("/").map(s => s.trim());
             const year = 2000 + parseInt(aa, 10);
-            const month = parseInt(mm, 10); // 1-12
+            const month = parseInt(mm, 10);
             if (month < 1 || month > 12) return false;
             const lastOfMonth = new Date(year, month, 0, 23, 59, 59, 999);
             return lastOfMonth.getTime() > Date.now();
         }
-
-        // Caso "YYYY-MM" o "YYYY-MM-DD"
         const d = new Date(raw);
         if (Number.isNaN(d.getTime())) return false;
-
-        // Si es "YYYY-MM", JS lo interpreta como día 1 del mes: ajustamos al fin de mes
         let year = d.getFullYear();
-        let month = d.getMonth() + 1; // 1..12
+        let month = d.getMonth() + 1;
         const lastOfMonth = new Date(year, month, 0, 23, 59, 59, 999);
         return lastOfMonth.getTime() > Date.now();
     }
@@ -54,7 +105,6 @@ $(function () {
         return (str || "").replace(/\s+/g, "");
     }
 
-    // --- VALIDACIÓN PRINCIPAL ---
     function validateForm() {
         const fullName = $fullName.val().trim();
         const email = $email.val().trim();
@@ -72,27 +122,15 @@ $(function () {
         if (!isFutureExpiry(expiry)) { alert("La fecha de caducidad debe ser futura."); return false; }
         if (!CVV_REGEX.test(cvv)) { alert("CVV debe contener exactamente 3 dígitos."); return false; }
 
-        return {
-            fullName, email, type,
-            numberLast4: number.slice(-4),
-            owner, expiry
-        };
+        return { fullName, email, type, numberLast4: number.slice(-4), owner, expiry };
     }
 
-    // --- SUBMIT ---
     $form.on("submit", function (e) {
         e.preventDefault();
-
         const data = validateForm();
         if (!data) return;
-
-        // (Opcional) Guardar la compra asociada al usuario actual
-        // Si quieres activarlo, añade en local_storage_ops.js helpers como addPurchaseForCurrentUser(...)
-        // addPurchaseForCurrentUser({ cardType: data.type, last4: data.numberLast4, when: new Date().toISOString() });
-
         alert("Compra realizada");
         this.reset();
     });
 
-    // El botón Borrar ya es type="reset", no hace falta JS extra
 });
