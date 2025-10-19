@@ -114,19 +114,20 @@
             <section class="text-block consejos-container" aria-labelledby="consejos">
                 <div class="consejos">
                     <h5 id="consejos">Últimos consejos</h5>
-                    <div class="ultimos-consejos-container">
-                        <a href="#">Cómo ahorrar dinero en hostales</a><br>
-                        <a href="#">Mejores apps para planear viajes</a><br>
-                        <a href="#">Visados fáciles en Asia</a>
+
+                    <div class="ultimos-consejos-container" id="adviceList">
+                        <!-- aquí se pintan SIEMPRE los 3 últimos desde localStorage -->
                     </div>
+
                     <h5>¿Tienes algún consejo?</h5>
                     <div class="write-consejos-container">
-                        <input type="text" placeholder="Título del consejo">
-                        <textarea placeholder="Escribe aquí tu consejo..."></textarea>
-                        <button type="submit">Enviar</button>
+                        <input type="text" id="adviceTitle" placeholder="Título del consejo">
+                        <textarea id="adviceDesc" placeholder="Escribe aquí tu consejo..."></textarea>
+                        <button type="button" id="adviceSend">Enviar</button>
                     </div>
                 </div>
             </section>
+
             <div class="line"></div>
 
             <section class="calendario-section">
@@ -250,7 +251,7 @@
 <script src="script/local_storage_ops.js"></script>
 <script src="script/script.js"></script>
 <script src="script/carrusel.js"></script>
-<script src="script/versionC.js"></script>
+<script src="script/versionB.js"></script>
 
 </body>
 </html>
