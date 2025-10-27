@@ -600,6 +600,13 @@ input {
 .top-right {
     margin-top: 1vw;
 }
+
+#profileAvatar {
+    width:4vw;
+    height:4vw;
+    border-radius:4px;
+    object-fit:cover;
+}
 /*TODO REDO BREAKPOINTS*/
 /*breakpoint for devices less then 600px*/
 @media (max-width: 600px) {

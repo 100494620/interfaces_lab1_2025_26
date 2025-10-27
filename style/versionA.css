@@ -30,9 +30,10 @@ input {
     font-family: fontText,serif;
 }
 /*plane for the cursor*/
-* {
+/** {
     cursor: url(../images/plane.png), auto;
 }
+*/
 #Inicio {
     display: flex;
     flex-direction: column;
@@ -185,6 +186,10 @@ label[for="file"], label[for="bday"] {
 
 #consent, label[for="consent"] {
     margin-top: 1.4vw;
+}
+
+#consent {
+    transform: scale(1.4);
 }
 
 /*initial*/
@@ -353,6 +358,9 @@ background-repeat: no-repeat;
         font-size: 2.5vw !important;
         }
 
+    #consent {
+        transform: scale(1);
+    }
 
 }
 
@@ -380,6 +388,10 @@ background-repeat: no-repeat;
     .footer-newsletter.button-comprar{
         font: 1.5vw/1.5vw serif;
     }
+
+    #consent {
+        transform: scale(1);
+    }
 }
 
 /*breakpoint for bigger screens, but not extremely big*/
@@ -393,6 +405,9 @@ background-repeat: no-repeat;
     }
     .top-right {
         padding-top: 2vw;
+    }
+    #consent {
+        transform: scale(1);
     }
 }
 

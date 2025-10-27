@@ -2,76 +2,110 @@ const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!.,:;@$%^&*-]).{8
 const EMAIL_REGEX = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
 
 
+window.addEventListener("DOMContentLoaded", () => {
+    validateCheckmark();
+});
+
+
 function onRegistration() {
     console.log("Entered the saving data...")
     let user = readUserRegistrationData()
+    let file = document.getElementById("fileR");
 
-    if ($("#nameR").val().length < 3) {
-        alert("Name should be at least 3 characters");
-        return false;
-    }
-
-    const splits = $("#surnameR").val().trim().split(/\s+/);
-    if (splits.length >= 2) {
-        for (let split of splits) {
-            if (split.length < 3) {
-                alert("Each surname should be at least 3 characters!");
-                return false;
-            }
+    function continueRegistration(base64File) {
+        user.image = base64File;
+        if ($("#nameR").val().length < 3) {
+            alert("Name should be at least 3 characters");
+            return false;
         }
+
+        const splits = $("#surnameR").val().trim().split(/\s+/);
+        if (splits.length >= 2) {
+            for (let split of splits) {
+                if (split.length < 3) {
+                    alert("Each surname should be at least 3 characters!");
+                    return false;
+                }
+            }
+        } else {
+            alert("Surname should be composed at least out of two entries!");
+            return false;
+        }
+
+        if (!EMAIL_REGEX.test(user.email)) {
+            alert("Email is not following the correct structure!");
+            document.getElementById("emailR").value = '';
+            return false;
+        }
+
+        //console.log("Checked passwords...")
+        const emailConfirm = document.getElementById("confirmEmailR").value;
+        if (user.email !== emailConfirm) {
+            alert("Emails don't match");
+            document.getElementById("confirmEmailR").value = '';
+            return false;
+        }
+
+        const birthday = new Date($("#birthdayR").val());
+        const today = new Date();
+        let curr_age = (today - birthday) / (1000 * 60 * 60 * 24 * 365.25);
+        if (curr_age < 16) {
+            alert("You should be at least 16 years old!");
+            return false;
+        }
+
+        if ($("#loginR").val().length < 5) {
+            alert("Login should be at least 5 characters");
+            return false;
+        }
+
+        if (!PASSWORD_REGEX.test(user.password)) {
+            alert("Password is not following the correct structure!");
+            document.getElementById("passwordR").value = '';
+            return false;
+        }
+
+
+        if (!$("#consent").is(":checked")) {
+            alert("Please accept the policy!")
+            return false;
+        }
+
+        console.log("Entered the saving data...");
+
+        if (!registerUser(user)) {
+            document.getElementById("loginR").value = '';
+            document.getElementById("passwordR").value = '';
+            return false;
+        }
+
+        confirmStored();
+        const registeredUsers = getRegisteredUsers();
+        loadUsersState(user, registeredUsers)
+        isLoggedInWithParams(user);
+        window.location.href = "versionB.html";
+        return false;
+    }
+
+    if (file.files && file.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const base64Image = event.target.result;
+            continueRegistration(base64Image);
+        };
+        reader.readAsDataURL(file.files[0]);
     } else {
-        alert("Surname should be composed at least out of two entries!");
-        return false;
+        continueRegistration(null);
     }
+}
 
-    if (!EMAIL_REGEX.test(user.email)) {
-        alert("Email is not following the correct structure!");
-        document.getElementById("emailR").value = '';
-        return false;
-    }
-
-    //console.log("Checked passwords...")
-    const emailConfirm = document.getElementById("confirmEmailR").value;
-    if (user.email !== emailConfirm) {
-        alert("Emails don't match");
-        document.getElementById("confirmEmailR").value = '';
-        return false;
-    }
-
-    const birthday = new Date($("#birthdayR").val());
-    const today = new Date();
-    let curr_age = (today - birthday) / (1000 * 60 * 60 * 24 * 365.25);
-    if (curr_age < 16) {
-        alert("You should be at least 16 years old!");
-        return false;
-    }
-
-    if ($("#loginR").val().length < 5) {
-        alert("Login should be at least 5 characters");
-        return false;
-    }
-
-    if (!PASSWORD_REGEX.test(user.password)) {
-        alert("Password is not following the correct structure!");
-        document.getElementById("passwordR").value = '';
-        return false;
-    }
-
-    if (!registerUser(user)) {
-        document.getElementById("loginR").value = '';
-        document.getElementById("passwordR").value = '';
-        return false;
-    }
-
-
-
-
-    confirmStored();
-    const registeredUsers = getRegisteredUsers();
-    loadUsersState(user, registeredUsers)
-    isLoggedInWithParams(user);
-    window.location.href = "versionB.html";
-    return false;
+function validateCheckmark() {
+    const checkbox = document.getElementById("consent");
+    const button = document.getElementById("buttonR");
+    button.disabled = !checkbox.checked;
+    checkbox.addEventListener("change", () => {
+        button.disabled = !checkbox.checked;
+    });
 }
 
 function readUserRegistrationData() {

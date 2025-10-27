@@ -78,3 +78,22 @@ $(function () {
     // Pintado inicial al cargar la página
     renderLastThree();
 });
+// TODO used chatgpt here
+// getting pic from the local storage and setting it as an icon
+$(function () {
+    const username = localStorage.getItem(EMAIL_LS_DATA);
+
+    if (!username) return;
+
+    const registeredUsers = getRegisteredUsers();
+    const user = registeredUsers.get(username);
+    // change login name from Usuario to actual one
+    $("#perfil-usuario").text(user.login_name || "Usuario")
+    // set profile pic
+    if (user && user.image) {
+        $("#profileAvatar").attr("src", user.image);
+    } else {
+        console.log("No image found for user:", username);
+    }
+});
+
