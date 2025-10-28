@@ -150,8 +150,16 @@ $(function () {
         e.preventDefault();
         const data = validateForm();
         if (!data) return;
+
         alert("Compra realizada");
+
+        // Espera 1 segundo tras la alerta antes de redirigir
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 500);
+
         this.reset();
     });
+
 
 });
