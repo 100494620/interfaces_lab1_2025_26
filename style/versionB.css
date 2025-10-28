@@ -936,42 +936,72 @@ input {
 
 
 
-    .calendario-section {
-        /* Mantenemos el tamaño base. Si está en el left_container, debería ocupar 100% */
-        width: 100%;
-        margin: 1.5vw 0;
-        padding: 1.2vw;
-        box-sizing: border-box;
+/* ===== Calendario (Grid) — versión compacta ===== */
+.cal {
+    width: min(80%, 260px);      /* tamaño más pequeño (antes 420px) */
+    margin: 0.5rem auto;
+    padding: 0.4rem 0.6rem;
+    background: #e3e8ef;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cal-head {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+    font-size: clamp(12px, 1.1vw, 15px); /* texto más pequeño */
+    color: #1f2a3a;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.2rem;                 /* menos espacio entre días */
+    font-size: clamp(9px, 0.9vw, 12px);
+    justify-items: center;
+}
+
+/* cabecera días */
+.cal-grid .dow {
+    text-align: center;
+    opacity: 0.65;
+    padding: 0.15rem 0;
+    font-weight: 600;
+}
+
+/* celdas de días */
+.cal-grid .day {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 0.35rem;
+    background: #edf4fa;
+    color: #0b2942;
+    transition: background 0.2s ease-in-out;
+}
+
+.cal-grid .day:hover {
+    background: #d3e6f7;
+}
+
+.cal-grid .day.muted { opacity: 0.4; }
+
+.cal-grid .day.highlight {
+    background: #91c0e8;
+    font-weight: 700;
+    color: #0a1a30;
+}
+
+/* vista móvil aún más pequeña */
+@media (max-width: 480px) {
+    .cal {
+        width: 90%;
+        padding: 0.3rem;
     }
-
-    .calendario{
-        /* Título del mes (SEPTEMBER 2025) */
-        /* Usamos 'rem' para un tamaño más predecible en PC */
-        font-size: 1.2rem; /* Aumentado ligeramente */
-        margin-bottom: 0.8rem;
-        text-align: center;
+    .cal-grid .day {
+        aspect-ratio: 6 / 5;
     }
-
-    .calendario table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .calendario th, .calendario td {
-        /* Celdas (días de la semana y números) */
-        padding: 0.5rem 0; /* Más cómodo en 'rem' */
-        font-size: 1rem;   /* Tamaño base legible */
-    }
-
-    .calendario .highlight {
-        /* 1. Definir dimensiones y centrado vertical */
-        width: 1.8rem;
-        height: 1.8rem;
-        line-height: 1.8rem;
-        font-size: 1rem;
-
-        /* 2. Propiedades del círculo */
-        background-color: #6495ed;
-        color: white;
-        border-radius: 50%;}
-
+}
