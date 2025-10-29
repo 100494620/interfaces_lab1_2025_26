@@ -1,4 +1,5 @@
 const REGISTERED_USERS_LS_DATA = "registeredUsers";
+// should be USERNAME_LS_DATA, but was too late to change it throughout the code
 const EMAIL_LS_DATA = "username";
 
 function getRegisteredUsers() {
@@ -9,12 +10,6 @@ function getRegisteredUsers() {
 function saveRegisteredUsersToStorage(registeredUsers) {
     const usersString = JSON.stringify(Array.from(registeredUsers));
     localStorage.setItem(REGISTERED_USERS_LS_DATA, usersString);
-}
-
-function saveUser(user) {
-    let users = getRegisteredUsers();
-    users.set(user.email, user);
-    saveRegisteredUsersToStorage(users);
 }
 
 function getMyInfo() {
