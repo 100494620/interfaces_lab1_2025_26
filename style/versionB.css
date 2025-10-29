@@ -67,112 +67,6 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-/*footer*/
-/*TODO CHANGE FOOTER*/
-/* ==== FOOTER NUEVO ==== */
-/* ===== FOOTER (versión con newsletter + barra inferior) ===== */
-.site-footer{
-    background:#2a578c;
-    color:#f0f0f0;
-    width:96%;
-    margin:2rem auto 0;
-    border-radius:.8vw;
-    font-family: fontText, serif;
-    overflow:hidden; /* redondeado limpio */
-}
-
-.site-footer a{ color:#f0f0f0; text-decoration:none; }
-.site-footer a:hover{ text-decoration:underline; }
-
-/* --- Newsletter (tira superior) --- */
-.footer-newsletter{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:1rem;
-    padding:1rem 1.25rem;
-    background:rgba(255,255,255,.06);
-}
-
-.nl-title{
-    margin:0;
-    font-family: fontHeader, serif;
-    font-size:1.1rem;
-    color:#fff;
-}
-
-.nl-form{
-    display:flex;
-    align-items:center;
-    gap:.6rem;
-    margin-left:auto;
-}
-
-.nl-form input[type="email"]{
-    padding:.55rem .75rem;
-    border-radius:.5rem;
-    border:none;
-    outline:none;
-    font-family: fontText, serif;
-    min-width: 220px;
-    background:#fff;
-    color:#333;
-}
-
-.nl-btn{
-    background:#f6d586;
-    color:#2a2a2a;
-    border:none;
-    border-radius:.55rem;
-    padding:.55rem .9rem;
-    font-family: fontHeader, serif;
-    cursor:pointer;
-}
-.nl-btn:hover{ background:#e6a31f; }
-
-/* oculto visualmente pero accesible */
-.sr-only{
-    position:absolute !important;
-    height:1px; width:1px;
-    overflow:hidden; clip:rect(1px,1px,1px,1px);
-}
-
-/* --- Barra inferior --- */
-.footer-bar{
-    display:grid;
-    grid-template-columns: 1fr auto auto;
-    align-items:center;
-    gap:1rem;
-    padding: .9rem 1.25rem;
-    border-top:1px solid rgba(255,255,255,.25);
-}
-
-.copy{
-    margin:0;
-    font-size:.9rem;
-    color:#e6eef6;
-}
-
-.footer-links{
-    list-style:none;
-    display:flex;
-    gap:1rem;
-    margin:0;
-    padding:0;
-    font-size:.95rem;
-}
-
-.footer-social{
-    display:flex;
-    align-items:center;
-    gap:.8rem;
-}
-
-.footer-social img{
-    width:26px; height:26px; object-fit:contain;
-    transition:transform .2s;
-}
-.footer-social img:hover{ transform:scale(1.12); }
 
 /* --- Responsive --- */
 @media (max-width: 900px){
@@ -1013,6 +907,141 @@ input {
     }
 }
 
+/* ===== FOOTER (responsive proporcional al estilo de la web) ===== */
+.site-footer {
+    background: #2a578c;
+    color: #f0f0f0;
+    width: 96%;
+    margin: 2vw auto 0;
+    border-radius: 0.8vw;
+    font-family: fontText, serif;
+    overflow: hidden;
+    font-size: 1vw; /* tamaño base proporcional */
+}
+
+/* Enlaces */
+.site-footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1vw;
+}
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Tira superior: newsletter --- */
+.footer-newsletter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* mantiene una sola línea */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0.6vw 0.6vw 0 0;
+}
+
+.footer-newsletter-title label {
+    font-family: fontHeader, serif;
+    font-size: 1.3vw;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.mail input[type="email"] {
+    padding: 0.6vw 0.9vw;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    font-family: fontText, serif;
+    font-size: 1vw;
+    width: 20vw;
+    background: #fff;
+    color: #333;
+}
+
+.newsletter-submit-button button {
+    background: #ffd36b;
+    color: #2a2a2a;
+    border: none;
+    border-radius: 0.4vw;
+    padding: 0.6vw 1.2vw;
+    font-family: fontHeader, serif;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.newsletter-submit-button button:hover {
+    background: #e6a31f;
+    color: #fff;
+}
+
+/* --- Barra inferior --- */
+.footer-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* nunca apila */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    border-top: 0.1vw solid rgba(255, 255, 255, 0.25);
+    background: #21476f;
+}
+
+.copy {
+    margin: 0;
+    font-size: 0.9vw;
+    color: #e6eef6;
+    white-space: nowrap;
+}
+
+/* Enlaces centrales */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.2vw;
+    margin: 0;
+    padding: 0;
+    font-size: 1vw;
+    white-space: nowrap;
+}
+
+/* Redes sociales */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+}
+
+.footer-social img {
+    width: 1.8vw;
+    height: 1.8vw;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+.footer-social img:hover {
+    transform: scale(1.12);
+}
+
+/* --- Escala general para pantallas pequeñas --- */
+@media (max-width: 600px) {
+    .site-footer {
+        font-size: 1.7vw;
+        border-radius: 1vw;
+    }
+    .footer-newsletter,
+    .footer-bar {
+        padding: 2vw;
+        gap: 2vw;
+    }
+    .footer-social img {
+        width: 3vw;
+        height: 3vw;
+    }
+}
 
 
 
