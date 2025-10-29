@@ -78,7 +78,7 @@ $(function () {
     // Pintado inicial al cargar la página
     renderLastThree();
 });
-// TODO used chatgpt here
+
 // getting pic from the local storage and setting it as an icon
 $(function () {
     const username = localStorage.getItem(EMAIL_LS_DATA);

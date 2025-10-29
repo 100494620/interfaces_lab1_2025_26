@@ -29,11 +29,7 @@ input {
     font-size: 1.3vw;
     font-family: fontText,serif;
 }
-/*plane for the cursor*/
-/** {
-    cursor: url(../images/plane.png), auto;
-}
-*/
+
 #Inicio {
     display: flex;
     flex-direction: column;
