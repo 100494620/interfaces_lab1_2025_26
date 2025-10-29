@@ -306,10 +306,6 @@ input {
     width: 75%;
     margin: 1vw 2vw 1vw 3.9vw;
 }
-/*plane for the cursor*/
-* {
-    cursor: url(../images/plane.png), auto;
-}
 
 /*bottom grid of experience cards*/
 .cartas-grind {
