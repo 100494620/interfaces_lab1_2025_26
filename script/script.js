@@ -1,18 +1,22 @@
 const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!.,:;@$%^&*-]).{8,}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
 
+const submit_button = document.getElementById("button-submit-image")
+if (submit_button) {
+    submit_button.addEventListener("click", function() {
+        document.getElementById("fileR").click();
+    });
+}
 
-window.addEventListener("DOMContentLoaded", () => {
-    validateCheckmark();
-});
+const file_input_button = document.getElementById("fileR");
+if (file_input_button) {
+    file_input_button.addEventListener("change", () => {
+        const fileName = document.getElementById("file-name");
+        if (fileName) fileName.textContent = "✅";
+    });
+}
 
-document.getElementById("button-submit-image").addEventListener("click", function() {
-    document.getElementById("fileR").click();
-});
-
-document.getElementById("fileR").addEventListener("change", function() {
-    document.getElementById("file-name").textContent = "✅";
-});
+validateCheckmark();
 
 function onRegistration() {
     console.log("Entered the saving data...")
@@ -113,6 +117,7 @@ function onRegistration() {
 function validateCheckmark() {
     const checkbox = document.getElementById("consent");
     const button = document.getElementById("buttonR");
+    if (!checkbox || !button) return;
     button.disabled = !checkbox.checked;
     checkbox.addEventListener("change", () => {
         button.disabled = !checkbox.checked;
