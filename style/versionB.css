@@ -936,58 +936,70 @@ input {
 
 
 
-/* ===== Calendario (Grid) — versión compacta ===== */
+/* ===== Calendario compacto centrado ===== */
+.calendario-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;          /* centra horizontal */
+    justify-content: center;      /* centra vertical */
+    padding: 2.5rem 0 2.5rem 0;   /* margen arriba y abajo */
+    min-height: 100%;             /* mantiene proporción vertical */
+}
+
+/* Contenedor del calendario */
 .cal {
-    width: min(80%, 260px);      /* tamaño más pequeño (antes 420px) */
-    margin: 0.5rem auto;
-    padding: 0.4rem 0.6rem;
+    width: clamp(160px, 25vw, 220px);  /* aún más pequeño */
+    margin: 1.8rem auto;               /* espacio arriba/abajo + centrado */
+    padding: 0.3rem 0.45rem;
     background: #e3e8ef;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: clamp(9px, 0.85vw, 12px); /* texto más pequeño */
 }
 
+/* Cabecera (mes/año) */
 .cal-head {
     text-align: center;
     font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.3rem;
-    font-size: clamp(12px, 1.1vw, 15px); /* texto más pequeño */
+    letter-spacing: 0.4px;
+    margin-bottom: 0.25rem;
     color: #1f2a3a;
+    font-size: clamp(10px, 0.9vw, 12px);
 }
 
+/* Grid de días */
 .cal-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 0.2rem;                 /* menos espacio entre días */
-    font-size: clamp(9px, 0.9vw, 12px);
+    gap: 0.15rem; /* separación más compacta */
     justify-items: center;
 }
 
-/* cabecera días */
 .cal-grid .dow {
-    text-align: center;
     opacity: 0.65;
-    padding: 0.15rem 0;
+    padding: 0.1rem 0;
     font-weight: 600;
 }
 
-/* celdas de días */
 .cal-grid .day {
     display: grid;
     place-items: center;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     width: 100%;
-    border-radius: 0.35rem;
+    border-radius: 0.3rem;
     background: #edf4fa;
     color: #0b2942;
     transition: background 0.2s ease-in-out;
+    line-height: 1;
 }
 
 .cal-grid .day:hover {
     background: #d3e6f7;
 }
 
-.cal-grid .day.muted { opacity: 0.4; }
+.cal-grid .day.muted {
+    opacity: 0.4;
+}
 
 .cal-grid .day.highlight {
     background: #91c0e8;
@@ -995,13 +1007,16 @@ input {
     color: #0a1a30;
 }
 
-/* vista móvil aún más pequeña */
+/* Móvil — sigue siendo proporcional */
 @media (max-width: 480px) {
     .cal {
-        width: 90%;
-        padding: 0.3rem;
-    }
-    .cal-grid .day {
-        aspect-ratio: 6 / 5;
+        width: clamp(150px, 60vw, 200px);
+        font-size: clamp(8px, 3vw, 11px);
+        padding: 0.25rem 0.35rem;
+        margin: 2rem auto;
     }
 }
+
+
+
+

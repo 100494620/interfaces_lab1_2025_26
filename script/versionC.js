@@ -155,7 +155,7 @@ $(function () {
 
         // Espera 1 segundo tras la alerta antes de redirigir
         setTimeout(() => {
-            window.location.href = "home.html";
+            window.location.href = "versionB.html";
         }, 500);
 
         this.reset();
