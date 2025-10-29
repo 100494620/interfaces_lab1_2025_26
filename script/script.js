@@ -6,11 +6,23 @@ window.addEventListener("DOMContentLoaded", () => {
     validateCheckmark();
 });
 
+document.getElementById("button-submit-image").addEventListener("click", function() {
+    document.getElementById("fileR").click();
+});
+
+document.getElementById("fileR").addEventListener("change", function() {
+    document.getElementById("file-name").textContent = "✅";
+});
 
 function onRegistration() {
     console.log("Entered the saving data...")
     let user = readUserRegistrationData()
     let file = document.getElementById("fileR");
+
+    if (!file.files || file.files.length === 0) {
+        alert("You should select a profile picture!");
+        return false;
+    }
 
     function continueRegistration(base64File) {
         user.image = base64File;
@@ -64,7 +76,6 @@ function onRegistration() {
             document.getElementById("passwordR").value = '';
             return false;
         }
-
 
         if (!$("#consent").is(":checked")) {
             alert("Please accept the policy!")

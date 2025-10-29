@@ -41,8 +41,9 @@
                 <label class="forma-text" for="loginR"></label>
                 <input type="text" id="loginR" name="login" placeholder="login">
                 <label class="forma-text" for="fileR">Subir imagen de perfil</label>
-                <input type="file" id="fileR" name="filename">
+                <input type="file" id="fileR" name="filename" style="display:none;" accept=".webp,.png,.jpg,.jpeg">
                 <button type="button" id="button-submit-image">Examinar ...</button>
+                <span id="file-name" style="margin-left:10px; font-size:1.2em;"></span>
                 <div class="consent-box">
                     <input type="checkbox" id="consent" name="consent" value="Consented">
                     <label for="consent">Acepto la
